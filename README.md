@@ -1,1 +1,2 @@
-# educhat-recommender
+# Educhat Recommender
+An Recommender Engine for career guidance
