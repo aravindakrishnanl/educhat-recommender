@@ -1,0 +1,201 @@
+id,name,grade,age,preferences,goal
+user_1,Student_1,11th,16,"['Coding', 'Mathematics']",Researcher
+user_2,Student_2,12th,18,"['Aptitude', 'Chemistry']",Software Engineer
+user_3,Student_3,10th,15,"['Aptitude', 'Mathematics']",Doctor
+user_4,Student_4,10th,15,"['Chemistry', 'Coding']",AI Engineer
+user_5,Student_5,College,20,"['Aptitude', 'Coding']",Chemical Engineer
+user_6,Student_6,College,20,"['Coding', 'Chemistry']",AI Engineer
+user_7,Student_7,10th,15,"['STEM', 'Communication']",Civil Engineer
+user_8,Student_8,11th,17,"['Communication', 'Chemistry']",Civil Engineer
+user_9,Student_9,College,20,"['Physics', 'Chemistry']",Software Engineer
+user_10,Student_10,College,21,"['Communication', 'Physics']",Researcher
+user_11,Student_11,College,20,"['Chemistry', 'Physics']",Civil Engineer
+user_12,Student_12,10th,15,"['Mathematics', 'STEM']",Software Engineer
+user_13,Student_13,College,20,"['STEM', 'Biology']",Data Scientist
+user_14,Student_14,11th,16,"['Coding', 'Mathematics']",Civil Engineer
+user_15,Student_15,College,20,"['Chemistry', 'Biology']",Cybersecurity Analyst
+user_16,Student_16,10th,15,"['Aptitude', 'Mathematics']",Cybersecurity Analyst
+user_17,Student_17,12th,18,"['Chemistry', 'Mathematics']",Doctor
+user_18,Student_18,11th,17,"['Aptitude', 'Coding']",Chemical Engineer
+user_19,Student_19,College,21,"['Coding', 'STEM']",Entrepreneur
+user_20,Student_20,10th,15,"['Chemistry', 'Biology']",Chemical Engineer
+user_21,Student_21,11th,17,"['Coding', 'Communication']",Doctor
+user_22,Student_22,12th,17,"['Communication', 'Aptitude']",AI Engineer
+user_23,Student_23,12th,17,"['Biology', 'Mathematics']",Data Scientist
+user_24,Student_24,11th,17,"['Coding', 'STEM']",AI Engineer
+user_25,Student_25,11th,17,"['Biology', 'Communication']",Civil Engineer
+user_26,Student_26,12th,17,"['Biology', 'Communication']",Entrepreneur
+user_27,Student_27,12th,17,"['Coding', 'Mathematics']",Researcher
+user_28,Student_28,12th,17,"['STEM', 'Physics']",Mechanical Engineer
+user_29,Student_29,12th,17,"['Communication', 'Biology']",Researcher
+user_30,Student_30,10th,15,"['Coding', 'Mathematics']",Mechanical Engineer
+user_31,Student_31,10th,16,"['Physics', 'Chemistry']",Mechanical Engineer
+user_32,Student_32,10th,16,"['Mathematics', 'Aptitude']",Software Engineer
+user_33,Student_33,12th,17,"['Chemistry', 'Mathematics']",Data Scientist
+user_34,Student_34,12th,18,"['Physics', 'Coding']",Mechanical Engineer
+user_35,Student_35,11th,17,"['STEM', 'Coding']",Doctor
+user_36,Student_36,College,20,"['Biology', 'Coding']",Data Scientist
+user_37,Student_37,College,20,"['Communication', 'Coding']",Civil Engineer
+user_38,Student_38,College,21,"['Biology', 'Aptitude']",Civil Engineer
+user_39,Student_39,11th,16,"['Chemistry', 'Communication']",Doctor
+user_40,Student_40,12th,17,"['Biology', 'Physics']",AI Engineer
+user_41,Student_41,College,21,"['STEM', 'Communication']",Chemical Engineer
+user_42,Student_42,11th,17,"['STEM', 'Communication']",Cybersecurity Analyst
+user_43,Student_43,College,21,"['Mathematics', 'Chemistry']",Cybersecurity Analyst
+user_44,Student_44,10th,16,"['Chemistry', 'Physics']",Software Engineer
+user_45,Student_45,College,20,"['Chemistry', 'Physics']",Researcher
+user_46,Student_46,10th,16,"['Mathematics', 'Communication']",Data Scientist
+user_47,Student_47,12th,18,"['Aptitude', 'Physics']",Researcher
+user_48,Student_48,12th,17,"['Chemistry', 'Communication']",Researcher
+user_49,Student_49,11th,17,"['Aptitude', 'Biology']",Software Engineer
+user_50,Student_50,12th,18,"['Chemistry', 'Communication']",Cybersecurity Analyst
+user_51,Student_51,12th,18,"['Communication', 'Chemistry']",Civil Engineer
+user_52,Student_52,College,20,"['Coding', 'Physics']",AI Engineer
+user_53,Student_53,12th,17,"['Chemistry', 'Mathematics']",Chemical Engineer
+user_54,Student_54,11th,16,"['Physics', 'STEM']",Software Engineer
+user_55,Student_55,11th,17,"['Coding', 'Chemistry']",Researcher
+user_56,Student_56,11th,17,"['Communication', 'Chemistry']",Civil Engineer
+user_57,Student_57,11th,16,"['Coding', 'Aptitude']",Researcher
+user_58,Student_58,11th,16,"['Communication', 'STEM']",AI Engineer
+user_59,Student_59,11th,16,"['Communication', 'Coding']",Entrepreneur
+user_60,Student_60,12th,18,"['Aptitude', 'Communication']",AI Engineer
+user_61,Student_61,College,20,"['Communication', 'Chemistry']",Chemical Engineer
+user_62,Student_62,11th,17,"['Communication', 'Mathematics']",Civil Engineer
+user_63,Student_63,12th,18,"['Coding', 'Mathematics']",Chemical Engineer
+user_64,Student_64,11th,17,"['Mathematics', 'Physics']",AI Engineer
+user_65,Student_65,10th,15,"['Physics', 'Coding']",Researcher
+user_66,Student_66,11th,16,"['Coding', 'Chemistry']",Researcher
+user_67,Student_67,12th,18,"['Aptitude', 'STEM']",Civil Engineer
+user_68,Student_68,College,21,"['STEM', 'Aptitude']",Cybersecurity Analyst
+user_69,Student_69,College,21,"['STEM', 'Physics']",Chemical Engineer
+user_70,Student_70,College,21,"['Chemistry', 'Communication']",Civil Engineer
+user_71,Student_71,12th,18,"['Communication', 'STEM']",Researcher
+user_72,Student_72,12th,18,"['Physics', 'Aptitude']",Entrepreneur
+user_73,Student_73,11th,16,"['Aptitude', 'Biology']",Cybersecurity Analyst
+user_74,Student_74,10th,15,"['Aptitude', 'Coding']",Entrepreneur
+user_75,Student_75,11th,16,"['Biology', 'Chemistry']",Doctor
+user_76,Student_76,11th,17,"['Mathematics', 'Physics']",Researcher
+user_77,Student_77,12th,18,"['Biology', 'Aptitude']",Data Scientist
+user_78,Student_78,College,20,"['STEM', 'Physics']",Civil Engineer
+user_79,Student_79,10th,15,"['STEM', 'Coding']",Civil Engineer
+user_80,Student_80,10th,15,"['Chemistry', 'Coding']",Entrepreneur
+user_81,Student_81,10th,15,"['Communication', 'Mathematics']",Chemical Engineer
+user_82,Student_82,12th,17,"['Coding', 'Aptitude']",Mechanical Engineer
+user_83,Student_83,12th,17,"['STEM', 'Physics']",Cybersecurity Analyst
+user_84,Student_84,College,21,"['Chemistry', 'STEM']",Cybersecurity Analyst
+user_85,Student_85,11th,16,"['Biology', 'Aptitude']",Cybersecurity Analyst
+user_86,Student_86,10th,15,"['Mathematics', 'Biology']",Researcher
+user_87,Student_87,12th,17,"['Mathematics', 'STEM']",Researcher
+user_88,Student_88,College,20,"['Aptitude', 'Physics']",Entrepreneur
+user_89,Student_89,11th,17,"['Physics', 'Mathematics']",AI Engineer
+user_90,Student_90,12th,18,"['Communication', 'Chemistry']",Cybersecurity Analyst
+user_91,Student_91,12th,18,"['Chemistry', 'Aptitude']",Data Scientist
+user_92,Student_92,12th,18,"['Chemistry', 'Aptitude']",Entrepreneur
+user_93,Student_93,College,21,"['STEM', 'Chemistry']",Doctor
+user_94,Student_94,11th,17,"['Chemistry', 'Physics']",Chemical Engineer
+user_95,Student_95,12th,18,"['Biology', 'Communication']",Software Engineer
+user_96,Student_96,11th,16,"['Chemistry', 'Mathematics']",Researcher
+user_97,Student_97,College,20,"['Communication', 'Mathematics']",Entrepreneur
+user_98,Student_98,College,20,"['Coding', 'Physics']",Civil Engineer
+user_99,Student_99,College,20,"['Biology', 'Mathematics']",Cybersecurity Analyst
+user_100,Student_100,12th,18,"['Mathematics', 'Chemistry']",AI Engineer
+user_101,Student_101,12th,18,"['Communication', 'Physics']",Chemical Engineer
+user_102,Student_102,12th,17,"['Coding', 'Mathematics']",Civil Engineer
+user_103,Student_103,12th,17,"['Physics', 'Coding']",Civil Engineer
+user_104,Student_104,College,21,"['Biology', 'STEM']",Civil Engineer
+user_105,Student_105,12th,17,"['Mathematics', 'Coding']",Chemical Engineer
+user_106,Student_106,10th,15,"['Biology', 'STEM']",Software Engineer
+user_107,Student_107,12th,17,"['Communication', 'STEM']",Software Engineer
+user_108,Student_108,12th,18,"['Communication', 'Chemistry']",Doctor
+user_109,Student_109,11th,16,"['Biology', 'Aptitude']",Entrepreneur
+user_110,Student_110,10th,15,"['Aptitude', 'Chemistry']",Data Scientist
+user_111,Student_111,10th,15,"['Physics', 'Aptitude']",Cybersecurity Analyst
+user_112,Student_112,12th,17,"['Chemistry', 'STEM']",AI Engineer
+user_113,Student_113,College,20,"['Aptitude', 'Chemistry']",Entrepreneur
+user_114,Student_114,12th,18,"['Biology', 'Communication']",Cybersecurity Analyst
+user_115,Student_115,10th,15,"['Chemistry', 'Mathematics']",Civil Engineer
+user_116,Student_116,12th,17,"['Physics', 'Coding']",Mechanical Engineer
+user_117,Student_117,10th,15,"['STEM', 'Chemistry']",Entrepreneur
+user_118,Student_118,College,21,"['STEM', 'Coding']",Chemical Engineer
+user_119,Student_119,12th,18,"['Coding', 'Mathematics']",Civil Engineer
+user_120,Student_120,12th,17,"['Aptitude', 'STEM']",AI Engineer
+user_121,Student_121,11th,16,"['Biology', 'Aptitude']",Mechanical Engineer
+user_122,Student_122,10th,15,"['Physics', 'Aptitude']",Chemical Engineer
+user_123,Student_123,12th,18,"['Coding', 'Chemistry']",Chemical Engineer
+user_124,Student_124,College,21,"['Communication', 'Chemistry']",Data Scientist
+user_125,Student_125,10th,16,"['Mathematics', 'Biology']",Chemical Engineer
+user_126,Student_126,10th,15,"['Chemistry', 'Mathematics']",Cybersecurity Analyst
+user_127,Student_127,10th,16,"['STEM', 'Aptitude']",Mechanical Engineer
+user_128,Student_128,College,21,"['Biology', 'Coding']",Cybersecurity Analyst
+user_129,Student_129,College,21,"['Coding', 'Chemistry']",Doctor
+user_130,Student_130,College,21,"['Mathematics', 'Communication']",Data Scientist
+user_131,Student_131,11th,17,"['Aptitude', 'Mathematics']",Entrepreneur
+user_132,Student_132,12th,18,"['STEM', 'Chemistry']",Data Scientist
+user_133,Student_133,12th,18,"['Mathematics', 'STEM']",Researcher
+user_134,Student_134,10th,16,"['Aptitude', 'STEM']",Civil Engineer
+user_135,Student_135,12th,18,"['Communication', 'Aptitude']",Software Engineer
+user_136,Student_136,11th,17,"['Physics', 'Communication']",Entrepreneur
+user_137,Student_137,College,20,"['STEM', 'Mathematics']",Cybersecurity Analyst
+user_138,Student_138,11th,16,"['Biology', 'Communication']",Software Engineer
+user_139,Student_139,College,20,"['Chemistry', 'Aptitude']",Data Scientist
+user_140,Student_140,College,20,"['Physics', 'Chemistry']",Chemical Engineer
+user_141,Student_141,12th,18,"['Communication', 'Chemistry']",Civil Engineer
+user_142,Student_142,College,20,"['Aptitude', 'Coding']",Cybersecurity Analyst
+user_143,Student_143,11th,16,"['Biology', 'Aptitude']",Researcher
+user_144,Student_144,12th,18,"['STEM', 'Physics']",Chemical Engineer
+user_145,Student_145,College,20,"['Communication', 'Biology']",Entrepreneur
+user_146,Student_146,12th,18,"['Aptitude', 'Chemistry']",Doctor
+user_147,Student_147,11th,16,"['Aptitude', 'Coding']",Researcher
+user_148,Student_148,10th,16,"['Communication', 'Mathematics']",Researcher
+user_149,Student_149,College,20,"['Communication', 'STEM']",Mechanical Engineer
+user_150,Student_150,12th,17,"['Communication', 'STEM']",AI Engineer
+user_151,Student_151,College,20,"['Physics', 'Chemistry']",Mechanical Engineer
+user_152,Student_152,10th,16,"['Biology', 'Physics']",Cybersecurity Analyst
+user_153,Student_153,College,20,"['Mathematics', 'Aptitude']",AI Engineer
+user_154,Student_154,College,21,"['Communication', 'Aptitude']",AI Engineer
+user_155,Student_155,10th,15,"['Chemistry', 'Mathematics']",Chemical Engineer
+user_156,Student_156,11th,16,"['Aptitude', 'STEM']",Data Scientist
+user_157,Student_157,College,20,"['Biology', 'STEM']",Software Engineer
+user_158,Student_158,12th,17,"['Biology', 'Physics']",Doctor
+user_159,Student_159,College,20,"['Chemistry', 'Biology']",Researcher
+user_160,Student_160,11th,16,"['Physics', 'STEM']",Cybersecurity Analyst
+user_161,Student_161,College,20,"['Communication', 'Biology']",Mechanical Engineer
+user_162,Student_162,11th,17,"['Biology', 'Chemistry']",Chemical Engineer
+user_163,Student_163,10th,16,"['Biology', 'Mathematics']",AI Engineer
+user_164,Student_164,11th,16,"['Communication', 'Physics']",Cybersecurity Analyst
+user_165,Student_165,12th,18,"['Biology', 'Chemistry']",Chemical Engineer
+user_166,Student_166,11th,17,"['Communication', 'STEM']",Civil Engineer
+user_167,Student_167,College,21,"['Biology', 'Mathematics']",Chemical Engineer
+user_168,Student_168,10th,16,"['Biology', 'STEM']",Cybersecurity Analyst
+user_169,Student_169,10th,16,"['Biology', 'Aptitude']",Civil Engineer
+user_170,Student_170,12th,17,"['Chemistry', 'Biology']",Chemical Engineer
+user_171,Student_171,11th,16,"['STEM', 'Physics']",Entrepreneur
+user_172,Student_172,10th,16,"['Physics', 'STEM']",Chemical Engineer
+user_173,Student_173,12th,18,"['Physics', 'Coding']",Mechanical Engineer
+user_174,Student_174,12th,18,"['Physics', 'Communication']",Entrepreneur
+user_175,Student_175,12th,18,"['Coding', 'Chemistry']",Data Scientist
+user_176,Student_176,11th,16,"['Aptitude', 'Communication']",AI Engineer
+user_177,Student_177,12th,17,"['Aptitude', 'STEM']",Chemical Engineer
+user_178,Student_178,10th,16,"['Mathematics', 'Communication']",Chemical Engineer
+user_179,Student_179,College,21,"['Coding', 'Mathematics']",Civil Engineer
+user_180,Student_180,College,20,"['Mathematics', 'Biology']",Civil Engineer
+user_181,Student_181,10th,16,"['Biology', 'Mathematics']",Researcher
+user_182,Student_182,10th,15,"['STEM', 'Communication']",Chemical Engineer
+user_183,Student_183,College,20,"['Coding', 'Communication']",AI Engineer
+user_184,Student_184,11th,17,"['Communication', 'Physics']",AI Engineer
+user_185,Student_185,College,20,"['Aptitude', 'Mathematics']",Data Scientist
+user_186,Student_186,College,21,"['Biology', 'STEM']",Doctor
+user_187,Student_187,11th,17,"['Communication', 'Coding']",Doctor
+user_188,Student_188,10th,16,"['Mathematics', 'STEM']",Researcher
+user_189,Student_189,12th,17,"['Coding', 'Aptitude']",Entrepreneur
+user_190,Student_190,10th,15,"['STEM', 'Communication']",Doctor
+user_191,Student_191,11th,16,"['Chemistry', 'STEM']",AI Engineer
+user_192,Student_192,11th,16,"['Chemistry', 'Physics']",Mechanical Engineer
+user_193,Student_193,10th,16,"['Physics', 'Coding']",AI Engineer
+user_194,Student_194,12th,17,"['Coding', 'Mathematics']",Software Engineer
+user_195,Student_195,11th,16,"['Mathematics', 'Aptitude']",Civil Engineer
+user_196,Student_196,12th,17,"['Physics', 'Communication']",Software Engineer
+user_197,Student_197,11th,17,"['Coding', 'Mathematics']",Data Scientist
+user_198,Student_198,College,21,"['Mathematics', 'Biology']",Cybersecurity Analyst
+user_199,Student_199,10th,16,"['Chemistry', 'Biology']",Software Engineer
+user_200,Student_200,12th,18,"['STEM', 'Communication']",Entrepreneur
