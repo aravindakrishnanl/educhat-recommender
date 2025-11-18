@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="auth-card">
+        <h2>Welcome Back</h2>
+        <form id="login-form">
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit" class="btn-primary">Login</button>
+        </form>
+        <p style="text-align: center; margin: 15px 0;">or</p>
+        <form id="signup-form">
+            <input type="text" id="signup-username" placeholder="New Username" required>
+            <input type="password" id="signup-password" placeholder="New Password" required>
+            <button type="submit" class="btn-primary" style="background-color: var(--accent-purple);">Sign Up</button>
+        </form>
+        <p id="auth-message" style="color: var(--primary-purple); text-align: center; margin-top: 15px;"></p>
+    </div>
+    
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const messageEl = document.getElementById('auth-message');
+
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `username=${username}&password=${password}`
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                // Store user data in local storage (simplified "session")
+                localStorage.setItem('user_id', data.user_id);
+                localStorage.setItem('username', data.username);
+                window.location.href = '/dashboard';
+            } else {
+                messageEl.textContent = data.detail || 'Login failed';
+            }
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('signup-username').value;
+            const password = document.getElementById('signup-password').value;
+            const messageEl = document.getElementById('auth-message');
+
+            const response = await fetch('/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                messageEl.textContent = 'Sign-up successful! You can now log in.';
+            } else {
+                messageEl.textContent = data.detail || 'Sign-up failed.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+:root {
+    --primary-purple: #6A1B9A; /* Deep Purple */
+    --light-purple: #EDE7F6; /* Very Light Purple for backgrounds */
+    --accent-purple: #E040FB; /* Neon Accent */
+    --white: #ffffff;
+    --dark-text: #212121;
+    --light-text: #616161;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-purple);
+    color: var(--dark-text);
+}
+
+/* --- HERO & AUTH STYLES --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, #7B1FA2 100%);
+    color: var(--white);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.auth-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin: 50px auto;
+    border-top: 5px solid var(--accent-purple);
+}
+
+.auth-card h2 {
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--light-purple);
+    padding-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #4A148C; /* Darker purple */
+}
+
+/* --- DASHBOARD STYLES --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header h1 {
+    color: var(--primary-purple);
+    margin: 0;
+}
+
+.workspace-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+.workspace-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--accent-purple);
+    transition: transform 0.2s;
+}
+
+.workspace-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-new-workspace {
+    background-color: var(--accent-purple);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-new-workspace:hover {
+    background-color: #C51162; 
+}
+
+/* --- NEW DELETE BUTTON STYLES --- */
+
+.btn-delete {
+    background-color: #B71C1C; /* Red color for Delete */
+    color: var(--white);
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 15px; /* Spacing from the Workspace title */
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Prevents the button from shrinking on small screens */
+}
+
+.btn-delete:hover {
+    background-color: #880E4F; /* Darker red on hover */
+}
+
+/* Ensure the button aligns nicely with the H3 title */
+.workspace-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px;
+}

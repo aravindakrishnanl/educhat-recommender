@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edurec - Find Your Ideal Engineering Job</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+</script>
+<style>
+  /* Small helpers (optional) */
+  .bg-gray-1 { background: linear-gradient(180deg,#f5f6fa,#fff); }
+  .text-primary { color: #135bec; }
+</style>
+</head>
+<body class="bg-background-light text-gray-900 dark:bg-background-dark dark:text-white">
+<div class="max-w-7xl mx-auto">
+<header class="flex items-center justify-between py-6 px-4">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">E</div>
+    <div>
+      <div class="text-sm font-semibold">Edurec</div>
+      <div class="text-xs text-gray-500 dark:text-gray-400">Career match for engineers</div>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <nav class="hidden md:flex gap-6 text-sm text-gray-600 dark:text-gray-300">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="dashboard.html" class="hover:text-primary">Jobs</a>
+      <a href="profile.html" class="hover:text-primary">Profile</a>
+    </nav>
+    <div class="hidden md:flex gap-3">
+      <a href="login.html" class="px-4 py-2 border rounded-md">Log In</a>
+      <a href="signup.html" class="px-4 py-2 rounded-md bg-primary text-white">Sign Up</a>
+    </div>
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </div>
+  </div>
+</header>
+
+<!-- HeroSection -->
+<main class="w-full">
+  <div class="w-full @container">
+    <div class="flex flex-col-reverse gap-6 px-4 py-16 sm:py-24 @[864px]:flex-row @[864px]:items-center">
+      <div class="flex flex-col gap-6 text-center @[864px]:text-left @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center">
+        <div class="flex flex-col gap-2">
+          <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white @[480px]:text-5xl">Find engineering jobs built for your skills</h1>
+          <p class="text-base text-gray-600 dark:text-[#9fb0da] max-w-2xl">Edurec helps engineering students discover jobs and internships matched to their profile and interests. Get personalised suggestions, role details and application tips.</p>
+        </div>
+        <div class="flex gap-3 justify-center @[864px]:justify-start">
+          <a href="signup.html" class="px-6 py-3 rounded-lg bg-primary text-white font-semibold shadow">Get started — it's free</a>
+          <a href="dashboard.html" class="px-6 py-3 rounded-lg border">Explore roles</a>
+        </div>
+        <div class="text-xs text-gray-600 dark:text-gray-400">No resume required — just create your profile and start exploring.</div>
+      </div>
+
+      <div class="flex justify-center @[864px]:justify-end">
+        <div class="w-full max-w-[480px] rounded-xl shadow-lg overflow-hidden bg-white dark:bg-[#0e1723]">
+          <img src="assets/welcome_screen.png" alt="welcome screen" class="w-full block"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="py-8">
+    <div class="@container px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-lg bg-white dark:bg-[#0f1724] shadow">
+          <h3 class="font-bold text-lg">Personalised matches</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">AI-backed job recommendations based on your skills and profile.</p>
+        </div>
+        <div class="p-6 rounded-lg bg-white dark:bg-[#0f1724] shadow">
+          <h3 class="font-bold text-lg">Role insights</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">See typical responsibilities, skills required and salary ranges.</p>
+        </div>
+        <div class="p-6 rounded-lg bg-white dark:bg-[#0f1724] shadow">
+          <h3 class="font-bold text-lg">Guided profile setup</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Step-by-step profile building to improve your match quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTASection -->
+  <section class="py-16 sm:py-24">
+    <div class="@container">
+      <div class="flex flex-col justify-end gap-6 rounded-xl bg-gray-100 dark:bg-[#071028] px-4 py-16 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+        <div class="flex flex-col gap-2 text-center items-center">
+          <h2 class="text-gray-900 dark:text-white tracking-tight text-[32px] @[480px]:text-[40px] @[480px]:font-black max-w-2xl">Ready to find your future?</h2>
+          <p class="text-gray-600 dark:text-[#92a4c9] text-base font-normal max-w-2xl">Create your profile and get tailored job suggestions to take the first step towards a fulfilling engineering career.</p>
+        </div>
+        <div class="flex flex-1 justify-center">
+          <a href="signup.html" class="px-8 py-4 rounded-md bg-primary text-white font-semibold">Create profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8">
+    <div class="@container px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600 dark:text-gray-400">© Edurec 2025</div>
+      <div class="flex items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+        <a class="hover:text-primary" href="#">Privacy Policy</a>
+        <a class="hover:text-primary" href="#">Terms of Service</a>
+        <a class="hover:text-primary" href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+</main>
+</div>
+</body></html>

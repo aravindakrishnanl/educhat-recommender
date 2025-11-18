@@ -1,0 +1,1356 @@
+[
+    {
+        "career_name": "Data Scientist",
+        "category": "Artificial Intelligence",
+        "required_skills": [
+            "Python",
+            "Machine Learning",
+            "Statistics",
+            "SQL",
+            "Pandas",
+            "TensorFlow",
+            "Data Visualization",
+            "Communication",
+            "Big Data",
+            "Storytelling"
+        ],
+        "recommended_courses": [
+            "Machine Learning by Andrew Ng (Coursera)",
+            "IBM Data Science Professional Certificate (Coursera)",
+            "NPTEL: Applied Data Science with Python"
+        ],
+        "projects": [
+            "Customer Churn Prediction",
+            "Sales Forecasting",
+            "Healthcare Data Analysis"
+        ],
+        "roadmap": "Start with Python and statistics \u2192 Learn data preprocessing and visualization \u2192 Master machine learning \u2192 Work on real-world projects \u2192 Learn MLOps and deployment."
+    },
+    {
+        "career_name": "Software Engineer",
+        "category": "Computer Science",
+        "required_skills": [
+            "Python",
+            "Java",
+            "C++",
+            "Data Structures",
+            "Algorithms",
+            "Git",
+            "OOP",
+            "System Design",
+            "Problem Solving",
+            "Version Control"
+        ],
+        "recommended_courses": [
+            "CS50: Introduction to Computer Science (edX)",
+            "Data Structures and Algorithms Specialization (Coursera)",
+            "NPTEL: Programming in Java"
+        ],
+        "projects": [
+            "Portfolio Website",
+            "Chat Application",
+            "Library Management System"
+        ],
+        "roadmap": "Learn programming languages and DSA \u2192 Build small projects \u2192 Learn version control and software design \u2192 Contribute to open source \u2192 Build enterprise-level apps."
+    },
+    {
+        "career_name": "Mechanical Design Engineer",
+        "category": "Mechanical Engineering",
+        "required_skills": [
+            "SolidWorks",
+            "AutoCAD",
+            "Finite Element Analysis",
+            "MATLAB",
+            "3D Modeling",
+            "Prototyping",
+            "Thermodynamics",
+            "Manufacturing Processes",
+            "Product Design"
+        ],
+        "recommended_courses": [
+            "NPTEL: Design of Machine Elements",
+            "CAD and Digital Manufacturing (Coursera)",
+            "SolidWorks 2023 Essentials (Udemy)"
+        ],
+        "projects": [
+            "3D Printer Design",
+            "Gearbox Mechanism",
+            "Robotic Arm Design"
+        ],
+        "roadmap": "Learn CAD tools \u2192 Master 3D modeling \u2192 Work with FEA simulations \u2192 Build prototypes and product designs."
+    },
+    {
+        "career_name": "Electrical Engineer",
+        "category": "Electrical Engineering",
+        "required_skills": [
+            "Circuit Design",
+            "MATLAB",
+            "Embedded Systems",
+            "Power Systems",
+            "PLC",
+            "Control Systems",
+            "Signal Processing",
+            "C Programming",
+            "LabVIEW",
+            "PCB Design"
+        ],
+        "recommended_courses": [
+            "NPTEL: Electrical Machines",
+            "Electrical Power Systems by University of Buffalo (Coursera)",
+            "Embedded Systems Programming (Udemy)"
+        ],
+        "projects": [
+            "Smart Switch Control",
+            "DC Motor Speed Control",
+            "Solar Energy System Design"
+        ],
+        "roadmap": "Learn circuit theory and power systems \u2192 Work on embedded systems \u2192 Build automation and control projects \u2192 Specialize in renewable or robotics applications."
+    },
+    {
+        "career_name": "Civil Engineer",
+        "category": "Civil Engineering",
+        "required_skills": [
+            "AutoCAD",
+            "STAAD Pro",
+            "Revit",
+            "Construction Management",
+            "Structural Design",
+            "Surveying",
+            "Estimation",
+            "Project Management",
+            "Geotechnical Engineering"
+        ],
+        "recommended_courses": [
+            "NPTEL: Structural Analysis",
+            "AutoCAD Civil 3D Training (Udemy)",
+            "Coursera: Construction Project Management"
+        ],
+        "projects": [
+            "Bridge Design",
+            "Apartment Structure Model",
+            "Soil Strength Analysis"
+        ],
+        "roadmap": "Master AutoCAD and STAAD \u2192 Learn design principles \u2192 Work on site-based projects \u2192 Gain experience in project management and estimation."
+    },
+    {
+        "career_name": "Electronics Engineer",
+        "category": "Electronics and Communication",
+        "required_skills": [
+            "Circuit Design",
+            "Microcontrollers",
+            "Digital Electronics",
+            "VHDL",
+            "Arduino",
+            "Raspberry Pi",
+            "Signal Processing",
+            "Soldering",
+            "PCB Fabrication",
+            "Embedded C"
+        ],
+        "recommended_courses": [
+            "NPTEL: Digital Circuits",
+            "Microcontrollers and Embedded Systems (Coursera)",
+            "IoT with Arduino and Raspberry Pi (Udemy)"
+        ],
+        "projects": [
+            "Smart Home Automation",
+            "RFID Attendance System",
+            "IoT Weather Station"
+        ],
+        "roadmap": "Start with circuit basics \u2192 Learn microcontrollers \u2192 Work on IoT projects \u2192 Develop embedded systems and automation prototypes."
+    },
+    {
+        "career_name": "Automobile Engineer",
+        "category": "Automotive Engineering",
+        "required_skills": [
+            "Vehicle Dynamics",
+            "CAD",
+            "SolidWorks",
+            "Combustion Engines",
+            "MATLAB Simulink",
+            "Design for Manufacturing",
+            "Automotive Electronics",
+            "Mechatronics",
+            "Thermodynamics"
+        ],
+        "recommended_courses": [
+            "NPTEL: Fundamentals of Automotive Systems",
+            "Automotive Design and Simulation (Coursera)",
+            "SolidWorks Vehicle Design (Udemy)"
+        ],
+        "projects": [
+            "Suspension System Design",
+            "EV Drivetrain Model",
+            "Vehicle Aerodynamics Simulation"
+        ],
+        "roadmap": "Learn mechanical and electrical basics \u2192 Study vehicle systems \u2192 Work on automotive modeling \u2192 Explore EV and autonomous vehicle technologies."
+    },
+    {
+        "career_name": "Instrumentation Engineer",
+        "category": "Instrumentation Engineering",
+        "required_skills": [
+            "Sensors",
+            "PLC",
+            "SCADA",
+            "Industrial Automation",
+            "Control Systems",
+            "Signal Conditioning",
+            "Embedded Systems",
+            "C Programming",
+            "Electronics"
+        ],
+        "recommended_courses": [
+            "NPTEL: Industrial Instrumentation",
+            "Process Control and Automation (Coursera)",
+            "PLC and SCADA Training (Udemy)"
+        ],
+        "projects": [
+            "Industrial Temperature Control System",
+            "Automatic Level Controller",
+            "Pressure Measurement Setup"
+        ],
+        "roadmap": "Learn measurement fundamentals \u2192 Work on PLC/SCADA systems \u2192 Build industrial automation projects \u2192 Specialize in process control."
+    },
+    {
+        "career_name": "Chemical Engineer",
+        "category": "Chemical Engineering",
+        "required_skills": [
+            "Thermodynamics",
+            "Chemical Process Design",
+            "MATLAB",
+            "Simulation",
+            "Process Control",
+            "Fluid Mechanics",
+            "Material Science",
+            "ChemCAD",
+            "Safety Management"
+        ],
+        "recommended_courses": [
+            "NPTEL: Chemical Process Principles",
+            "Coursera: Introduction to Process Simulation",
+            "Process Engineering Fundamentals (Udemy)"
+        ],
+        "projects": [
+            "Distillation Column Design",
+            "Water Purification System",
+            "Heat Exchanger Simulation"
+        ],
+        "roadmap": "Master process calculations \u2192 Work on plant design \u2192 Learn simulation tools \u2192 Explore green and sustainable chemical processes."
+    },
+    {
+        "career_name": "Industrial Engineer",
+        "category": "Industrial Engineering",
+        "required_skills": [
+            "Lean Manufacturing",
+            "Six Sigma",
+            "Process Optimization",
+            "Supply Chain Management",
+            "Operations Research",
+            "ERP Systems",
+            "Data Analysis",
+            "Project Management"
+        ],
+        "recommended_courses": [
+            "NPTEL: Industrial Engineering and Management",
+            "Lean Six Sigma Yellow Belt (Coursera)",
+            "Operations Analytics (Wharton - Coursera)"
+        ],
+        "projects": [
+            "Process Optimization Model",
+            "Inventory Control System",
+            "Factory Simulation"
+        ],
+        "roadmap": "Learn process optimization \u2192 Study lean and Six Sigma \u2192 Work on operations analytics \u2192 Manage production systems."
+    },
+    {
+        "career_name": "Cloud Engineer",
+        "category": "Cloud Computing",
+        "required_skills": [
+            "AWS",
+            "Azure",
+            "Docker",
+            "Kubernetes",
+            "Linux",
+            "Networking",
+            "Python"
+        ],
+        "recommended_courses": [
+            "AWS Certified Solutions Architect by Amazon",
+            "Google Cloud Fundamentals (Coursera)",
+            "Microsoft Azure Fundamentals AZ-900"
+        ],
+        "projects": [
+            "Deploy a website using AWS EC2",
+            "Containerize app using Docker",
+            "Set up Kubernetes cluster"
+        ],
+        "roadmap": "Start with cloud basics and Linux \u2192 Learn AWS/Azure \u2192 Work on deployment and automation \u2192 Get certified in cloud platforms \u2192 Build scalable cloud systems."
+    },
+    {
+        "career_name": "Cybersecurity Analyst",
+        "category": "Information Security",
+        "required_skills": [
+            "Networking",
+            "Ethical Hacking",
+            "Firewalls",
+            "SIEM Tools",
+            "Python",
+            "Incident Response"
+        ],
+        "recommended_courses": [
+            "Certified Ethical Hacker (CEH)",
+            "Google Cybersecurity Professional Certificate",
+            "NPTEL: Information Security \u2013 Theory and Practice"
+        ],
+        "projects": [
+            "Vulnerability Assessment Lab",
+            "Phishing Simulation",
+            "Network Intrusion Detection"
+        ],
+        "roadmap": "Learn networking fundamentals \u2192 Understand security principles \u2192 Practice ethical hacking \u2192 Work on penetration testing \u2192 Learn incident management and compliance."
+    },
+    {
+        "career_name": "Robotics Engineer",
+        "category": "Mechatronics and Automation",
+        "required_skills": [
+            "Python",
+            "ROS",
+            "Arduino",
+            "Embedded Systems",
+            "Control Systems",
+            "CAD"
+        ],
+        "recommended_courses": [
+            "Robotics Specialization by University of Pennsylvania",
+            "ROS for Beginners by Udemy",
+            "NPTEL: Introduction to Mechatronics"
+        ],
+        "projects": [
+            "Obstacle Avoiding Robot",
+            "Robotic Arm",
+            "Autonomous Line Follower"
+        ],
+        "roadmap": "Learn programming and electronics \u2192 Understand robotics control systems \u2192 Build small robots \u2192 Learn ROS and automation systems \u2192 Develop autonomous robots."
+    },
+    {
+        "career_name": "Blockchain Developer",
+        "category": "Blockchain Technology",
+        "required_skills": [
+            "Solidity",
+            "Ethereum",
+            "Smart Contracts",
+            "Cryptography",
+            "Node.js",
+            "Web3.js"
+        ],
+        "recommended_courses": [
+            "Blockchain Specialization by Coursera",
+            "Ethereum Developer Bootcamp",
+            "Blockchain A-Z by Udemy"
+        ],
+        "projects": [
+            "NFT Marketplace",
+            "Voting System on Blockchain",
+            "Decentralized Finance App (DeFi)"
+        ],
+        "roadmap": "Understand blockchain fundamentals \u2192 Learn Solidity and Ethereum \u2192 Build smart contracts \u2192 Create decentralized apps \u2192 Explore security and scaling in blockchain."
+    },
+    {
+        "career_name": "IoT Engineer",
+        "category": "Internet of Things",
+        "required_skills": [
+            "Python",
+            "Arduino",
+            "Raspberry Pi",
+            "Embedded C",
+            "Networking",
+            "Cloud Integration"
+        ],
+        "recommended_courses": [
+            "IoT Specialization by University of California, Irvine",
+            "Introduction to IoT by Cisco",
+            "NPTEL: Internet of Things"
+        ],
+        "projects": [
+            "Smart Home Automation",
+            "IoT-based Weather Station",
+            "Smart Agriculture Monitoring"
+        ],
+        "roadmap": "Start with microcontrollers and sensors \u2192 Learn networking and data transfer \u2192 Integrate IoT with cloud \u2192 Work on real-world IoT projects \u2192 Explore security and automation."
+    },
+    {
+        "career_name": "Game Developer",
+        "category": "Game Design and Development",
+        "required_skills": [
+            "C#",
+            "Unity",
+            "Unreal Engine",
+            "3D Modeling",
+            "Animation",
+            "Physics Simulation"
+        ],
+        "recommended_courses": [
+            "Unity Game Development by Coursera",
+            "Unreal Engine C++ Developer Course",
+            "Game Design and Development by Michigan State University"
+        ],
+        "projects": [
+            "2D Platformer Game",
+            "Multiplayer Racing Game",
+            "VR Shooting Game"
+        ],
+        "roadmap": "Learn programming and game logic \u2192 Master Unity or Unreal Engine \u2192 Create small games \u2192 Focus on 3D design and animation \u2192 Build advanced multiplayer or VR projects."
+    },
+    {
+        "career_name": "DevOps Engineer",
+        "category": "Software Engineering",
+        "required_skills": [
+            "Linux",
+            "Docker",
+            "Kubernetes",
+            "CI/CD",
+            "Jenkins",
+            "Git",
+            "AWS",
+            "Python"
+        ],
+        "recommended_courses": [
+            "DevOps on AWS Specialization by Coursera",
+            "Docker and Kubernetes by Udemy",
+            "NPTEL: Software Engineering Principles"
+        ],
+        "projects": [
+            "CI/CD Pipeline Setup",
+            "Containerized Microservices",
+            "Server Monitoring Dashboard"
+        ],
+        "roadmap": "Learn Linux and shell scripting \u2192 Understand CI/CD principles \u2192 Work on Docker and Kubernetes \u2192 Automate deployments \u2192 Focus on infrastructure as code and monitoring."
+    },
+    {
+        "career_name": "AR/VR Developer",
+        "category": "Augmented and Virtual Reality",
+        "required_skills": [
+            "Unity",
+            "C#",
+            "3D Modeling",
+            "VR SDKs",
+            "UX Design",
+            "Computer Graphics"
+        ],
+        "recommended_courses": [
+            "AR/VR Specialization by University of London",
+            "Developing AR Apps with Unity",
+            "Coursera: Virtual Reality by UC San Diego"
+        ],
+        "projects": [
+            "Virtual Museum Tour",
+            "AR Shopping App",
+            "VR Training Simulation"
+        ],
+        "roadmap": "Learn Unity and C# \u2192 Understand 3D modeling \u2192 Build basic VR/AR experiences \u2192 Learn SDK integration \u2192 Create immersive real-world simulations."
+    },
+    {
+        "career_name": "Cloud Security Engineer",
+        "category": "Cloud Computing & Cybersecurity",
+        "required_skills": [
+            "AWS Security",
+            "IAM",
+            "Networking",
+            "Encryption",
+            "Compliance",
+            "Python"
+        ],
+        "recommended_courses": [
+            "AWS Certified Security Specialty",
+            "Google Cloud Security Fundamentals",
+            "NPTEL: Cloud Computing Security"
+        ],
+        "projects": [
+            "Secure AWS Architecture",
+            "Identity Access Management System",
+            "Cloud Threat Detection Tool"
+        ],
+        "roadmap": "Understand cloud architecture \u2192 Learn security principles \u2192 Implement IAM and encryption \u2192 Work on threat modeling \u2192 Master compliance frameworks like ISO and SOC2."
+    },
+    {
+        "career_name": "AI Research Scientist",
+        "category": "Artificial Intelligence and Research",
+        "required_skills": [
+            "Deep Learning",
+            "Mathematics",
+            "Research Methods",
+            "Python",
+            "PyTorch",
+            "TensorFlow"
+        ],
+        "recommended_courses": [
+            "Deep Learning Specialization by Andrew Ng",
+            "Advanced Machine Learning by HSE",
+            "NPTEL: AI \u2013 Search Methods for Problem Solving"
+        ],
+        "projects": [
+            "Text-to-Speech Model",
+            "Image Captioning",
+            "AI-based Drug Discovery Model"
+        ],
+        "roadmap": "Build strong ML foundation \u2192 Learn advanced neural networks \u2192 Work on published research papers \u2192 Contribute to AI open-source projects \u2192 Pursue PhD or research fellowships."
+    },
+    {
+        "career_name": "UI/UX Designer",
+        "category": "Design and User Experience",
+        "required_skills": [
+            "Figma",
+            "Adobe XD",
+            "Wireframing",
+            "Prototyping",
+            "User Research",
+            "Design Thinking"
+        ],
+        "recommended_courses": [
+            "Google UX Design Professional Certificate",
+            "UI/UX Design Specialization by CalArts",
+            "NPTEL: Human-Computer Interaction"
+        ],
+        "projects": [
+            "Redesign a Mobile App",
+            "E-commerce Website Prototype",
+            "Usability Testing Report"
+        ],
+        "roadmap": "Learn design principles \u2192 Practice wireframing and prototyping \u2192 Build UX case studies \u2192 Create a design portfolio \u2192 Master advanced UI tools and accessibility design."
+    },
+    {
+        "career_name": "Product Manager",
+        "category": "Business and Technology",
+        "required_skills": [
+            "Market Analysis",
+            "Agile",
+            "Product Strategy",
+            "Roadmapping",
+            "Data Analytics",
+            "Communication"
+        ],
+        "recommended_courses": [
+            "Digital Product Management by University of Virginia",
+            "Product Management 101 by Udemy",
+            "NPTEL: Project Management for Managers"
+        ],
+        "projects": [
+            "Feature Prioritization Plan",
+            "Product Launch Strategy",
+            "User Requirement Analysis"
+        ],
+        "roadmap": "Learn business and product concepts \u2192 Understand agile and scrum \u2192 Work on market research \u2192 Collaborate with developers and designers \u2192 Build product roadmaps."
+    },
+    {
+        "career_name": "Data Analyst",
+        "category": "Data Science",
+        "required_skills": [
+            "Excel",
+            "SQL",
+            "Python",
+            "Power BI",
+            "Data Visualization",
+            "Statistics"
+        ],
+        "recommended_courses": [
+            "Google Data Analytics Professional Certificate",
+            "IBM Data Analyst Specialization",
+            "NPTEL: Data Analytics with Python"
+        ],
+        "projects": [
+            "Sales Data Dashboard",
+            "Customer Retention Analysis",
+            "Financial Trend Report"
+        ],
+        "roadmap": "Learn Excel and SQL \u2192 Practice Python for analysis \u2192 Create dashboards \u2192 Perform exploratory data analysis \u2192 Build data-driven insights and reports."
+    },
+    {
+        "career_name": "Business Analyst",
+        "category": "Business and Data",
+        "required_skills": [
+            "SQL",
+            "Excel",
+            "Communication",
+            "Visualization",
+            "Problem Solving",
+            "Requirement Analysis"
+        ],
+        "recommended_courses": [
+            "Business Analytics Specialization by Wharton",
+            "Google Business Intelligence Professional Certificate",
+            "NPTEL: Decision Making Using Data"
+        ],
+        "projects": [
+            "Market Entry Analysis",
+            "Customer Segmentation Report",
+            "Process Optimization Plan"
+        ],
+        "roadmap": "Understand business operations \u2192 Learn SQL and Excel \u2192 Perform data analysis \u2192 Create business reports \u2192 Learn stakeholder communication."
+    },
+    {
+        "career_name": "Mechanical Engineer",
+        "category": "Mechanical Engineering",
+        "required_skills": [
+            "AutoCAD",
+            "SolidWorks",
+            "Thermodynamics",
+            "FEA",
+            "MATLAB",
+            "Prototyping"
+        ],
+        "recommended_courses": [
+            "SolidWorks 2024 Essentials",
+            "NPTEL: Mechanics of Solids",
+            "Engineering Design Process by Coursera"
+        ],
+        "projects": [
+            "Engine Design Model",
+            "Heat Exchanger Analysis",
+            "Mechanical Arm Prototype"
+        ],
+        "roadmap": "Master mechanical fundamentals \u2192 Learn CAD tools \u2192 Work on simulations and design \u2192 Build prototypes \u2192 Explore manufacturing and robotics integration."
+    },
+    {
+        "career_name": "Civil Engineer",
+        "category": "Civil and Structural Engineering",
+        "required_skills": [
+            "AutoCAD",
+            "STAAD Pro",
+            "Surveying",
+            "Concrete Technology",
+            "Structural Analysis"
+        ],
+        "recommended_courses": [
+            "NPTEL: Structural Analysis",
+            "Civil 3D Design by Autodesk",
+            "Construction Management Specialization"
+        ],
+        "projects": [
+            "Bridge Design",
+            "Building Layout Plan",
+            "Water Distribution Network"
+        ],
+        "roadmap": "Learn construction fundamentals \u2192 Use design and analysis tools \u2192 Create structural plans \u2192 Manage real-world site projects \u2192 Focus on sustainable construction."
+    },
+    {
+        "career_name": "Digital Marketing Specialist",
+        "category": "Marketing and Communication",
+        "required_skills": [
+            "SEO",
+            "Google Ads",
+            "Social Media Marketing",
+            "Analytics",
+            "Content Strategy"
+        ],
+        "recommended_courses": [
+            "Google Digital Marketing & E-commerce Professional Certificate",
+            "Meta Social Media Marketing",
+            "NPTEL: Marketing Analytics"
+        ],
+        "projects": [
+            "SEO Optimization Plan",
+            "Ad Campaign Analysis",
+            "Brand Engagement Report"
+        ],
+        "roadmap": "Learn digital marketing fundamentals \u2192 Practice SEO and PPC \u2192 Work on analytics and content creation \u2192 Build social campaigns \u2192 Analyze ROI and optimize marketing."
+    },
+    {
+        "career_name": "Graphic Designer",
+        "category": "Creative Design",
+        "required_skills": [
+            "Adobe Photoshop",
+            "Illustrator",
+            "InDesign",
+            "Typography",
+            "Branding",
+            "Creativity"
+        ],
+        "recommended_courses": [
+            "Graphic Design Specialization by CalArts",
+            "Adobe Illustrator Masterclass",
+            "NPTEL: Principles of Design"
+        ],
+        "projects": [
+            "Brand Logo Design",
+            "Poster Campaign",
+            "UI Asset Pack"
+        ],
+        "roadmap": "Learn design tools \u2192 Study color theory and typography \u2192 Practice branding and layout design \u2192 Create a professional portfolio \u2192 Work on freelance or agency projects."
+    },
+    {
+        "career_name": "Content Writer",
+        "category": "Media and Communication",
+        "required_skills": [
+            "SEO Writing",
+            "Research",
+            "Storytelling",
+            "Editing",
+            "Digital Marketing",
+            "Grammar"
+        ],
+        "recommended_courses": [
+            "Content Writing Masterclass by Udemy",
+            "Creative Writing Specialization by Wesleyan University",
+            "NPTEL: Technical Communication"
+        ],
+        "projects": [
+            "Blog Series",
+            "Website Copywriting",
+            "Whitepaper Writing"
+        ],
+        "roadmap": "Develop writing and editing skills \u2192 Learn SEO and digital writing \u2192 Write across niches \u2192 Build a portfolio \u2192 Learn content strategy and storytelling."
+    },
+    {
+        "career_name": "AI Engineer",
+        "category": "Artificial Intelligence",
+        "required_skills": [
+            "Python",
+            "Deep Learning",
+            "TensorFlow",
+            "PyTorch",
+            "Data Processing",
+            "NLP"
+        ],
+        "recommended_courses": [
+            "AI For Everyone by Andrew Ng",
+            "Deep Learning Specialization by Coursera",
+            "NPTEL: Deep Learning"
+        ],
+        "projects": [
+            "Chatbot using NLP",
+            "Image Classification Model",
+            "Speech Emotion Detection"
+        ],
+        "roadmap": "Learn programming and ML basics \u2192 Study deep learning \u2192 Work on projects in vision and NLP \u2192 Optimize and deploy AI models \u2192 Contribute to AI innovations."
+    },
+    {
+        "career_name": "Mechanical Design Engineer",
+        "field": "Mechanical Engineering",
+        "required_skills": [
+            "SolidWorks",
+            "CAD",
+            "Finite Element Analysis",
+            "3D Modeling"
+        ],
+        "recommended_courses": [
+            "Design of Machine Elements",
+            "Finite Element Analysis Fundamentals",
+            "SolidWorks Certification Course"
+        ],
+        "projects": [
+            "Gearbox Assembly Design",
+            "3D Printed Robot Arm",
+            "Suspension System Design"
+        ],
+        "roadmap": "Master SolidWorks and CAD tools \u2192 Learn stress analysis and FEA \u2192 Design real-world mechanical components and participate in competitions."
+    },
+    {
+        "career_name": "Civil Structural Engineer",
+        "field": "Civil Engineering",
+        "required_skills": [
+            "AutoCAD",
+            "STAAD.Pro",
+            "Structural Analysis",
+            "Concrete Design"
+        ],
+        "recommended_courses": [
+            "Structural Engineering Basics",
+            "Reinforced Concrete Design",
+            "AutoCAD Civil 3D Training"
+        ],
+        "projects": [
+            "Bridge Design Analysis",
+            "Earthquake Resistant Building Model",
+            "Flyover Structure Simulation"
+        ],
+        "roadmap": "Develop CAD proficiency \u2192 Learn load analysis tools \u2192 Work on infrastructure design and urban development projects."
+    },
+    {
+        "career_name": "Aerospace Engineer",
+        "field": "Aerospace Engineering",
+        "required_skills": [
+            "Aerodynamics",
+            "CFD",
+            "MATLAB",
+            "Propulsion Systems"
+        ],
+        "recommended_courses": [
+            "Aerodynamics Fundamentals",
+            "CFD using ANSYS Fluent",
+            "Rocket Propulsion Systems"
+        ],
+        "projects": [
+            "Drone Flight Simulation",
+            "Wing Lift Optimization",
+            "Jet Engine Efficiency Analysis"
+        ],
+        "roadmap": "Learn fundamentals of flight and propulsion \u2192 Simulate airflows \u2192 Design UAV or rocket prototypes."
+    },
+    {
+        "career_name": "Automotive Engineer",
+        "field": "Automobile Engineering",
+        "required_skills": [
+            "Vehicle Dynamics",
+            "CAD",
+            "MATLAB",
+            "Control Systems"
+        ],
+        "recommended_courses": [
+            "Automotive Engineering Fundamentals",
+            "Vehicle Dynamics by SAE",
+            "Electric Vehicle Powertrain Design"
+        ],
+        "projects": [
+            "EV Powertrain Simulation",
+            "Autonomous Vehicle Path Planning",
+            "Brake System Design"
+        ],
+        "roadmap": "Learn automotive systems and dynamics \u2192 Work on EVs \u2192 Integrate mechatronics for automation."
+    },
+    {
+        "career_name": "Electrical Design Engineer",
+        "field": "Electrical Engineering",
+        "required_skills": [
+            "AutoCAD Electrical",
+            "Circuit Design",
+            "Power Systems",
+            "MATLAB Simulink"
+        ],
+        "recommended_courses": [
+            "Electrical Circuit Design",
+            "Power Systems Analysis",
+            "MATLAB for Engineers"
+        ],
+        "projects": [
+            "Smart Grid Simulation",
+            "Load Flow Analysis",
+            "Renewable Energy Circuit Design"
+        ],
+        "roadmap": "Learn electrical fundamentals \u2192 Work with simulation tools \u2192 Contribute to smart energy projects."
+    },
+    {
+        "career_name": "Biomedical Engineer",
+        "field": "Biomedical Engineering",
+        "required_skills": [
+            "Signal Processing",
+            "Medical Imaging",
+            "MATLAB",
+            "Machine Learning"
+        ],
+        "recommended_courses": [
+            "Biomedical Instrumentation",
+            "Medical Image Analysis",
+            "AI in Healthcare"
+        ],
+        "projects": [
+            "ECG Signal Classification",
+            "X-Ray Image Segmentation",
+            "Wearable Health Monitor"
+        ],
+        "roadmap": "Study human physiology \u2192 Apply AI to medical diagnostics \u2192 Develop bio-compatible systems."
+    },
+    {
+        "career_name": "Chemical Process Engineer",
+        "field": "Chemical Engineering",
+        "required_skills": [
+            "Aspen Plus",
+            "Thermodynamics",
+            "Heat Transfer",
+            "Process Simulation"
+        ],
+        "recommended_courses": [
+            "Chemical Process Control",
+            "Aspen Plus Simulation",
+            "Mass Transfer Operations"
+        ],
+        "projects": [
+            "Distillation Column Simulation",
+            "Fertilizer Production Process",
+            "Heat Exchanger Design"
+        ],
+        "roadmap": "Learn core chemical principles \u2192 Model processes in Aspen \u2192 Design and optimize chemical plants."
+    },
+    {
+        "career_name": "Marine Engineer",
+        "field": "Marine Engineering",
+        "required_skills": [
+            "Marine Engines",
+            "Fluid Mechanics",
+            "Thermodynamics",
+            "Ship Design"
+        ],
+        "recommended_courses": [
+            "Marine Engineering Fundamentals",
+            "Ship Construction and Design",
+            "Thermal Systems in Ships"
+        ],
+        "projects": [
+            "Ship Propulsion Simulation",
+            "Ballast Water Treatment System",
+            "Marine Engine Diagnostics"
+        ],
+        "roadmap": "Understand ship mechanics \u2192 Work with propulsion systems \u2192 Move towards sustainable maritime engineering."
+    },
+    {
+        "career_name": "Environmental Engineer",
+        "field": "Environmental Engineering",
+        "required_skills": [
+            "Water Treatment",
+            "GIS",
+            "Environmental Impact Assessment",
+            "Waste Management"
+        ],
+        "recommended_courses": [
+            "Environmental Engineering Principles",
+            "Water and Wastewater Treatment",
+            "Sustainable Development Goals"
+        ],
+        "projects": [
+            "Water Filtration System",
+            "Urban Waste Recycling Model",
+            "EIA for Industrial Zone"
+        ],
+        "roadmap": "Understand environmental challenges \u2192 Learn GIS mapping \u2192 Work on pollution control and sustainability projects."
+    },
+    {
+        "career_name": "Energy Systems Engineer",
+        "field": "Energy Engineering",
+        "required_skills": [
+            "Renewable Energy",
+            "Energy Management",
+            "Simulation",
+            "Solar Systems"
+        ],
+        "recommended_courses": [
+            "Renewable Energy Technologies",
+            "Energy Audit and Management",
+            "Solar Power System Design"
+        ],
+        "projects": [
+            "Solar Power Plant Simulation",
+            "Wind Turbine Analysis",
+            "Smart Energy Storage System"
+        ],
+        "roadmap": "Learn fundamentals of energy conversion \u2192 Explore solar and wind systems \u2192 Design sustainable power solutions."
+    },
+    {
+        "career_name": "Cybersecurity Analyst",
+        "field": "Information Security",
+        "required_skills": [
+            "Network Security",
+            "Penetration Testing",
+            "Firewalls",
+            "Python"
+        ],
+        "recommended_courses": [
+            "Cybersecurity Specialization by Coursera",
+            "Ethical Hacking by EC-Council",
+            "Network Security Fundamentals"
+        ],
+        "projects": [
+            "Vulnerability Assessment",
+            "Firewall Configuration",
+            "Simulated Cyber Attack Response"
+        ],
+        "roadmap": "Understand network fundamentals \u2192 Learn security tools and ethical hacking \u2192 Work on penetration testing and threat detection."
+    },
+    {
+        "career_name": "Cloud Solutions Architect",
+        "field": "Cloud Computing",
+        "required_skills": [
+            "AWS",
+            "Azure",
+            "Cloud Architecture",
+            "DevOps"
+        ],
+        "recommended_courses": [
+            "AWS Certified Solutions Architect",
+            "Google Cloud Professional Architect",
+            "Azure Cloud Fundamentals"
+        ],
+        "projects": [
+            "Deploy Web App on AWS",
+            "Build CI/CD Pipeline",
+            "Multi-Cloud Backup System"
+        ],
+        "roadmap": "Master cloud fundamentals \u2192 Learn infrastructure as code \u2192 Design scalable and secure cloud solutions."
+    },
+    {
+        "career_name": "AI Research Scientist",
+        "field": "Artificial Intelligence",
+        "required_skills": [
+            "Deep Learning",
+            "NLP",
+            "TensorFlow",
+            "Research"
+        ],
+        "recommended_courses": [
+            "Deep Learning Specialization by Andrew Ng",
+            "Natural Language Processing",
+            "AI for Everyone"
+        ],
+        "projects": [
+            "Text Summarization Model",
+            "Generative AI Chatbot",
+            "Reinforcement Learning Simulation"
+        ],
+        "roadmap": "Master ML algorithms \u2192 Dive into neural networks \u2192 Publish research and develop novel AI architectures."
+    },
+    {
+        "career_name": "Blockchain Developer",
+        "field": "Blockchain Technology",
+        "required_skills": [
+            "Solidity",
+            "Ethereum",
+            "Smart Contracts",
+            "Cryptography"
+        ],
+        "recommended_courses": [
+            "Blockchain Specialization by Coursera",
+            "Ethereum and Solidity Developer Bootcamp",
+            "Decentralized Applications Development"
+        ],
+        "projects": [
+            "NFT Marketplace",
+            "Voting Smart Contract",
+            "Decentralized Finance (DeFi) App"
+        ],
+        "roadmap": "Learn blockchain basics \u2192 Master Solidity \u2192 Build and deploy DApps on Ethereum network."
+    },
+    {
+        "career_name": "Robotics Engineer",
+        "field": "Robotics",
+        "required_skills": [
+            "ROS",
+            "Embedded Systems",
+            "Python",
+            "Computer Vision"
+        ],
+        "recommended_courses": [
+            "Robotics Specialization by University of Pennsylvania",
+            "ROS for Beginners",
+            "Computer Vision with OpenCV"
+        ],
+        "projects": [
+            "Autonomous Line Follower Robot",
+            "Object-Picking Robot Arm",
+            "SLAM Navigation System"
+        ],
+        "roadmap": "Understand mechanical and electrical integration \u2192 Work with ROS and AI vision \u2192 Develop intelligent robotic systems."
+    },
+    {
+        "career_name": "DevOps Engineer",
+        "field": "Software Engineering",
+        "required_skills": [
+            "CI/CD",
+            "Docker",
+            "Kubernetes",
+            "Linux"
+        ],
+        "recommended_courses": [
+            "DevOps on AWS",
+            "Docker and Kubernetes Mastery",
+            "CI/CD with Jenkins"
+        ],
+        "projects": [
+            "Automated Deployment Pipeline",
+            "Containerized Application Setup",
+            "Monitoring Dashboard for Servers"
+        ],
+        "roadmap": "Learn cloud and automation tools \u2192 Practice container orchestration \u2192 Implement scalable deployment systems."
+    },
+    {
+        "career_name": "Game Developer",
+        "field": "Game Development",
+        "required_skills": [
+            "Unity",
+            "C#",
+            "3D Modeling",
+            "Game Physics"
+        ],
+        "recommended_courses": [
+            "Game Design and Development Specialization",
+            "Unity Game Development",
+            "C# for Beginners"
+        ],
+        "projects": [
+            "3D Platformer Game",
+            "Multiplayer Shooting Game",
+            "VR Racing Simulation"
+        ],
+        "roadmap": "Learn game engines \u2192 Design interactive gameplay \u2192 Work on 3D rendering and physics engines."
+    },
+    {
+        "career_name": "AR/VR Developer",
+        "field": "Extended Reality",
+        "required_skills": [
+            "Unity",
+            "Unreal Engine",
+            "3D Modeling",
+            "C#"
+        ],
+        "recommended_courses": [
+            "AR/VR Development with Unity",
+            "Metaverse Foundations",
+            "Immersive Experience Design"
+        ],
+        "projects": [
+            "AR Education App",
+            "VR Training Simulation",
+            "3D Virtual Museum"
+        ],
+        "roadmap": "Learn immersive technologies \u2192 Build AR/VR apps \u2192 Integrate AI and IoT for interactive experiences."
+    },
+    {
+        "career_name": "Data Analyst",
+        "field": "Data Science",
+        "required_skills": [
+            "Excel",
+            "SQL",
+            "Python",
+            "Power BI"
+        ],
+        "recommended_courses": [
+            "Google Data Analytics Certificate",
+            "Data Analysis with Python",
+            "Advanced Excel for Business"
+        ],
+        "projects": [
+            "Sales Trend Dashboard",
+            "Customer Segmentation Report",
+            "KPI Visualization"
+        ],
+        "roadmap": "Start with Excel and SQL \u2192 Learn Python and visualization \u2192 Work on business analytics projects."
+    },
+    {
+        "career_name": "Network Engineer",
+        "field": "Networking",
+        "required_skills": [
+            "Cisco",
+            "LAN/WAN",
+            "Network Security",
+            "Routing and Switching"
+        ],
+        "recommended_courses": [
+            "CCNA Certification",
+            "Network Fundamentals",
+            "CompTIA Network+"
+        ],
+        "projects": [
+            "LAN Network Configuration",
+            "VPN Setup",
+            "Network Traffic Monitoring System"
+        ],
+        "roadmap": "Understand networking basics \u2192 Get certified (CCNA) \u2192 Manage enterprise-scale network infrastructures."
+    },
+    {
+        "career_name": "Sustainable Energy Engineer",
+        "field": "Renewable Energy",
+        "required_skills": [
+            "Solar Design",
+            "Energy Modeling",
+            "MATLAB",
+            "Environmental Impact Analysis"
+        ],
+        "recommended_courses": [
+            "Renewable Energy and Green Building Entrepreneurship",
+            "Solar Energy Systems Design",
+            "Energy Economics"
+        ],
+        "projects": [
+            "Solar Power Estimation for a Smart City",
+            "Wind Turbine Optimization",
+            "Energy-Efficient Building Design"
+        ],
+        "roadmap": "Learn energy fundamentals \u2192 Work on renewable systems and simulations \u2192 Contribute to sustainable infrastructure design."
+    },
+    {
+        "career_name": "AI Product Manager",
+        "field": "Artificial Intelligence & Management",
+        "required_skills": [
+            "Product Management",
+            "Machine Learning Concepts",
+            "Data Analytics",
+            "Business Strategy"
+        ],
+        "recommended_courses": [
+            "AI Product Management Specialization",
+            "Agile Product Management",
+            "Data-Driven Decision Making"
+        ],
+        "projects": [
+            "AI-Powered Recommendation System Plan",
+            "Customer Insights Dashboard",
+            "Predictive Analytics Product Strategy"
+        ],
+        "roadmap": "Learn AI fundamentals \u2192 Gain business and strategy knowledge \u2192 Manage AI-driven products and cross-functional teams."
+    },
+    {
+        "career_name": "Biotechnology Engineer",
+        "field": "Biotechnology",
+        "required_skills": [
+            "Genetic Engineering",
+            "Molecular Biology",
+            "Bioinformatics",
+            "Lab Techniques"
+        ],
+        "recommended_courses": [
+            "Introduction to Biotechnology",
+            "Bioinformatics by UC San Diego",
+            "Genomics and Proteomics"
+        ],
+        "projects": [
+            "DNA Sequence Analyzer",
+            "Bioinformatics Drug Prediction",
+            "Protein Structure Visualization"
+        ],
+        "roadmap": "Study cellular biology \u2192 Learn genetic modification \u2192 Apply data analysis and AI in biotech innovations."
+    },
+    {
+        "career_name": "Financial Analyst",
+        "field": "Finance",
+        "required_skills": [
+            "Excel",
+            "Financial Modeling",
+            "Accounting",
+            "Data Visualization"
+        ],
+        "recommended_courses": [
+            "Financial Markets by Yale",
+            "Investment Management",
+            "Corporate Finance Essentials"
+        ],
+        "projects": [
+            "Portfolio Risk Assessment",
+            "Company Valuation Model",
+            "Stock Market Prediction Dashboard"
+        ],
+        "roadmap": "Understand finance basics \u2192 Learn data modeling \u2192 Analyze markets and manage portfolios."
+    },
+    {
+        "career_name": "Environmental Engineer",
+        "field": "Environmental Science",
+        "required_skills": [
+            "Water Treatment",
+            "GIS",
+            "Pollution Control",
+            "Sustainability Planning"
+        ],
+        "recommended_courses": [
+            "Environmental Engineering Fundamentals",
+            "Sustainability and Climate Change",
+            "GIS for Environmental Management"
+        ],
+        "projects": [
+            "Wastewater Treatment Simulation",
+            "Air Quality Prediction",
+            "Smart Waste Management System"
+        ],
+        "roadmap": "Master environmental processes \u2192 Learn modeling and regulation \u2192 Implement sustainable projects."
+    },
+    {
+        "career_name": "Human-Computer Interaction Designer",
+        "field": "UX/UI & Interaction Design",
+        "required_skills": [
+            "User Research",
+            "Prototyping",
+            "Usability Testing",
+            "Design Thinking"
+        ],
+        "recommended_courses": [
+            "Interaction Design by UC San Diego",
+            "Human-Centered Design",
+            "Figma UI Prototyping"
+        ],
+        "projects": [
+            "Accessible App Interface",
+            "Usability Testing Report",
+            "Smartwatch UI Concept"
+        ],
+        "roadmap": "Learn human-computer interaction \u2192 Build and test prototypes \u2192 Design for accessibility and inclusivity."
+    },
+    {
+        "career_name": "Supply Chain Data Analyst",
+        "field": "Operations & Data Analytics",
+        "required_skills": [
+            "Logistics",
+            "SQL",
+            "Python",
+            "Tableau"
+        ],
+        "recommended_courses": [
+            "Supply Chain Analytics",
+            "Operations Management",
+            "Data Visualization with Tableau"
+        ],
+        "projects": [
+            "Inventory Optimization Dashboard",
+            "Delivery Route Efficiency Analysis",
+            "Supplier Performance Model"
+        ],
+        "roadmap": "Learn supply chain basics \u2192 Analyze logistics data \u2192 Optimize processes using predictive analytics."
+    },
+    {
+        "career_name": "Quantum Computing Researcher",
+        "field": "Quantum Computing",
+        "required_skills": [
+            "Quantum Mechanics",
+            "Qiskit",
+            "Linear Algebra",
+            "Python"
+        ],
+        "recommended_courses": [
+            "Quantum Computing for Everyone",
+            "Qiskit Developer Course",
+            "Quantum Machine Learning"
+        ],
+        "projects": [
+            "Quantum Encryption Simulation",
+            "Quantum Circuit Optimization",
+            "Quantum ML Experiment"
+        ],
+        "roadmap": "Understand quantum fundamentals \u2192 Learn quantum programming \u2192 Work on practical quantum algorithms."
+    },
+    {
+        "career_name": "Agricultural Technologist",
+        "field": "AgriTech & IoT",
+        "required_skills": [
+            "IoT Sensors",
+            "Machine Learning",
+            "Data Analytics",
+            "Crop Science"
+        ],
+        "recommended_courses": [
+            "Smart Farming and IoT",
+            "Precision Agriculture",
+            "Data-Driven Agriculture Systems"
+        ],
+        "projects": [
+            "Soil Moisture Monitoring System",
+            "AI Crop Yield Predictor",
+            "Drone-Based Crop Health Detection"
+        ],
+        "roadmap": "Learn agricultural systems \u2192 Apply IoT and ML \u2192 Build smart and sustainable farming solutions."
+    },
+    {
+        "career_name": "Digital Marketing Analyst",
+        "field": "Marketing & Data",
+        "required_skills": [
+            "SEO",
+            "Google Analytics",
+            "Content Strategy",
+            "Social Media Marketing"
+        ],
+        "recommended_courses": [
+            "Digital Marketing Specialization by Illinois",
+            "SEO Fundamentals",
+            "Marketing Analytics"
+        ],
+        "projects": [
+            "Website Traffic Optimization",
+            "Ad Campaign ROI Tracker",
+            "Social Media Growth Analysis"
+        ],
+        "roadmap": "Master digital tools \u2192 Learn marketing analytics \u2192 Create and optimize data-driven campaigns."
+    }
+]

@@ -1,0 +1,351 @@
+/* --- Variables and Reset --- */
+:root {
+    --bg-dark: #0a0e19; /* Main dark background */
+    --bg-card: #151d2f; /* Darker background for feature cards */
+    --text-light: #e0e6ed; /* Light text for most content */
+    --text-medium: #8a96a8; /* Slightly darker light text */
+    --primary-blue: #3498db; /* Main button/accent blue */
+    --hover-blue: #2980b9; /* Darker blue for hover states */
+    --border-color: #2b3a4a; /* Border for navbar bottom, cards */
+    --font-inter: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-inter);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-inter);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+h1, h2, h3 {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-blue);
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.navbar .logo i {
+    color: var(--primary-blue);
+    margin-right: 8px;
+}
+
+.nav-links a {
+    margin: 0 18px;
+    font-size: 0.95em;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--text-light);
+}
+
+.auth-buttons .btn-login {
+    background: none;
+    color: var(--text-light);
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 0.95em;
+}
+
+.auth-buttons .btn-login:hover {
+    color: var(--primary-blue);
+}
+
+.auth-buttons .btn-signup {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.95em;
+}
+
+.auth-buttons .btn-signup:hover {
+    background-color: var(--hover-blue);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px; /* Constrain content width */
+    margin: 60px auto 100px auto; /* Adjust top/bottom margin */
+    padding: 0 20px;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em; /* Large, bold text */
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 1.15em;
+    color: var(--text-medium);
+    margin-bottom: 35px;
+}
+
+.hero-image-container {
+    flex: 1;
+    min-width: 450px; /* Ensure image container has a base width */
+    height: 380px; /* Fixed height for the image container */
+    background-image: url('hero-image.jpg'); /* Make sure this image is in the same folder */
+    background-size: cover; /* Cover the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* --- Why Choose Edurec Section --- */
+.why-choose-section {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-choose-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    padding: 35px;
+    border-radius: 10px;
+    text-align: left; /* Text aligns left inside card */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align icon and text to start */
+    border: 1px solid transparent; /* For hover effect */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-5px);
+}
+
+.feature-card .icon-circle {
+    background-color: rgba(52, 152, 219, 0.15); /* Light blue background for icon */
+    color: var(--primary-blue);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+.feature-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: var(--text-medium);
+    font-size: 0.95em;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    text-align: center;
+    padding: 100px 20px 120px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.15em;
+    color: var(--text-medium);
+    margin-bottom: 40px;
+}
+
+/* --- Footer --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: var(--text-medium);
+}
+
+.footer-nav-links a {
+    margin-left: 30px;
+    color: var(--text-medium);
+}
+
+.footer-nav-links a:hover {
+    color: var(--text-light);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.05em;
+    }
+    .hero-image-container {
+        min-width: 350px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center;
+        gap: 15px;
+    }
+    .nav-links, .auth-buttons {
+        flex-basis: 100%; /* Take full width */
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+    }
+    .auth-buttons {
+        margin-top: 5px;
+    }
+    .hero-section {
+        flex-direction: column; /* Stack hero content and image */
+        text-align: center;
+        margin: 40px auto 80px auto;
+        gap: 40px;
+    }
+    .hero-content {
+        max-width: 100%; /* Allow content to use full width */
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-image-container {
+        width: 90%; /* Adjust image width for smaller screens */
+        min-width: unset;
+        height: 250px;
+    }
+    .why-choose-section h2, .cta-section h2 {
+        font-size: 2em;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column layout for features */
+    }
+    .feature-card {
+        text-align: center;
+        align-items: center;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-nav-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 1.3em;
+    }
+    .auth-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-login, .btn-signup {
+        width: 100%;
+        margin-right: 0;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .footer-nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .footer-nav-links a {
+        margin: 0 5px;
+    }
+}
