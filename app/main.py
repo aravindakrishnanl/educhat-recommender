@@ -4,15 +4,15 @@ from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from passlib.context import CryptContext
-from typing import Annotated, List
+from typing import Annotated, List, Optional
 from pathlib import Path
 import os
+from typing import List, Union
 
 # CORE PACKAGE IMPORTS
 from .database import engine, Base, get_db
-# Import recommender_setup before recommender_core to ensure ML models are initialized
 from . import models, recommender_setup 
-from . import recommender_core # Contains the recommendation functions
+from . import recommender_core 
 
 # Import specific schema classes explicitly
 from .schemas import (
@@ -20,13 +20,11 @@ from .schemas import (
     UserCreate, 
     Workspace, 
     WorkspaceCreate,
-    WorkspaceBaseGraph,
-    WorkspaceBaseML
+    FeedbackCreate # CRUCIAL: Fixes the NameError in submit_feedback route
 )
 
 # --- INITIAL SETUP ---
 app = FastAPI(title="Career Recommender API")
-# Using sha256_crypt for stable hashing
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto") 
 db_dependency = Annotated[Session, Depends(get_db)]
 
@@ -38,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 def on_startup():
     Base.metadata.create_all(bind=engine)
 
-# Serve static files (CSS) using an absolute path for reliability
+# Serve static files (CSS) 
 app.mount(
     "/static", 
     StaticFiles(directory=os.path.join(BASE_DIR, "app/static")), 
@@ -88,14 +86,12 @@ def create_workspace(user_id: int, workspace: WorkspaceCreate, db: db_dependency
     model_type = workspace.model_type
     recommendations_list = []
 
-    # Prepare data based on the chosen model schema
     user_skills_str = workspace.skills
     user_interests_str = workspace.interests
     
-    # Base data dictionary for ML models (SVD/KMEANS)
     ml_data = {
         'branch': workspace.branch,
-        'skills': [s.strip() for s in user_skills_str.split(',') if s.strip()], # ML functions expect a list
+        'skills': [s.strip() for s in user_skills_str.split(',') if s.strip()],
         'interests': user_interests_str,
         'projects_completed': getattr(workspace, 'projects_completed', ""),
         'certifications_completed': getattr(workspace, 'certifications_completed', "")
@@ -113,7 +109,6 @@ def create_workspace(user_id: int, workspace: WorkspaceCreate, db: db_dependency
     elif model_type == "KMEANS":
         recommendations_list = recommender_core.recommend_kmeans_model(ml_data)
     else:
-        # Should be caught by Literal type hints in schemas, but safe to include
         raise HTTPException(status_code=400, detail="Invalid model type selected.")
 
 
@@ -125,7 +120,6 @@ def create_workspace(user_id: int, workspace: WorkspaceCreate, db: db_dependency
         branch=workspace.branch,
         skills=user_skills_str,
         interests=user_interests_str,
-        # Safely assign optional fields; they will be None if not provided by the schema/form
         projects_completed=getattr(workspace, 'projects_completed', None), 
         certifications_completed=getattr(workspace, 'certifications_completed', None),
         recommendations=recommendations_list 
@@ -152,18 +146,41 @@ def delete_workspace(user_id: int, workspace_id: int, db: db_dependency):
     if not workspace:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Workspace not found or unauthorized.")
     
+    # SQLAlchemy will handle the cascade deletion of related Feedback records due to the 'delete-orphan' rule.
     db.delete(workspace)
     db.commit()
     
     return {"message": f"Workspace ID {workspace_id} deleted successfully."}
 
+# FEATURE: Submit Feedback (Online Learning)
+@app.post("/user/{user_id}/feedback", status_code=status.HTTP_202_ACCEPTED)
+def submit_feedback(user_id: int, feedback_data: FeedbackCreate, db: db_dependency):
+    
+    db_feedback = models.Feedback(
+        user_id=user_id,
+        workspace_id=feedback_data.workspace_id,
+        career_name=feedback_data.career_name,
+        rating=feedback_data.rating
+    )
+    
+    db.add(db_feedback)
+    db.commit()
+    db.refresh(db_feedback)
+    
+    # Trigger the Online Learning update process for the Graph Model
+    if db_feedback.rating == 1:
+        recommender_core.update_graph_weights(db_feedback.career_name, user_id, db)
+    
+    return {"message": "Feedback submitted successfully and system learning process initiated."}
 
-# --- FRONTEND ROUTES (To serve HTML) ---
+
+# --- FRONTEND ROUTES ---
 
 def get_template_response(template_name):
     """Utility function to read and serve HTML templates."""
     try:
-        with open(BASE_DIR / "templates" / template_name, "r") as f:
+        # FIX: Added encoding='utf-8' to prevent UnicodeDecodeError
+        with open(BASE_DIR / "templates" / template_name, "r", encoding='utf-8') as f:
             return HTMLResponse(f.read())
     except FileNotFoundError:
         raise HTTPException(status_code=500, detail=f"Template {template_name} not found. Check the 'templates' folder.")

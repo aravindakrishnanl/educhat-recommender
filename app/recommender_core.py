@@ -5,9 +5,10 @@ import networkx as nx
 import os 
 from pathlib import Path
 from sklearn.metrics.pairwise import cosine_similarity
-# Import global variables from setup file
 from . import recommender_setup as setup 
-import numpy as np # Import numpy for array manipulation
+from . import models as setup_models # Needed to query Workspace model
+import numpy as np 
+from typing import Any, Dict
 
 # Define BASE_DIR 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +38,6 @@ def load_graph_data():
     G = nx.Graph()
     for _, row in df.iterrows():
         G.add_node(row["career_name"], type="career")
-        # Ensure consistent lowercase matching for graph nodes
         for skill in row["required_skills"]:
             G.add_node(skill.lower(), type="skill") 
             G.add_edge(row["career_name"], skill.lower(), weight=3) 
@@ -55,22 +55,66 @@ DF_GRAPH, G_CORE = load_graph_data()
 
 # --- Helper function for ML Models (K-Means/SVD) ---
 
-def combine_user_input_ml(user_data):
+def combine_user_input_ml(user_data: Dict[str, Any]) -> str:
     """Combines user profile into a single text string for TF-IDF vectorization."""
     user_text_parts = []
     
-    # Data structure provided by the main router
     user_text_parts.append(user_data.get('branch', ''))
     user_text_parts.append(user_data.get('interests', ''))
     
-    # inputs are lists of strings
     user_text_parts.append(' '.join(user_data.get('skills', []))) 
     user_text_parts.append(' '.join(user_data.get('projects_completed', [])))
     user_text_parts.append(' '.join(user_data.get('certifications_completed', [])))
 
-    # Ensure all inputs are lowercase for matching
     return ' '.join([p.lower() for p in user_text_parts if p])
 
+# --- ONLINE LEARNING FUNCTION ---
+
+def update_graph_weights(career_name: str, user_id: int, db: Any):
+    """
+    Increases edge weights in the core graph between the user's relevant nodes 
+    and a positively rated career's requirements.
+    """
+    global G_CORE
+    global DF_GRAPH
+    
+    # 1. Look up the user's most recent workspace for context
+    try:
+        user_workspace = db.query(setup_models.Workspace).filter(
+            setup_models.Workspace.user_id == user_id
+        ).order_by(setup_models.Workspace.created_at.desc()).first()
+        
+        if not user_workspace:
+            return
+
+        user_skills = [s.strip().lower() for s in user_workspace.skills.split(",") if s.strip()]
+        user_interests = [i.strip().lower() for i in user_workspace.interests.split(",") if i.strip()]
+        
+    except Exception as e:
+        print(f"ERROR: Database lookup failed during graph update: {e}")
+        return
+
+    # 2. Find the target career's requirements from the DataFrame
+    try:
+        career_row = DF_GRAPH[DF_GRAPH["career_name"] == career_name].iloc[0]
+        required_skills = [s.lower() for s in career_row["required_skills"]] 
+    except IndexError:
+        print(f"ERROR: Career '{career_name}' not found in the dataset.")
+        return
+
+    # 3. Identify matching nodes
+    target_nodes = set(required_skills)
+    user_nodes = set(user_skills + user_interests)
+    matching_nodes = target_nodes.intersection(user_nodes)
+    
+    # 4. Permanently increase the weights in the core graph (G_CORE)
+    for node in matching_nodes:
+        if G_CORE.has_edge(career_name, node):
+            current_weight = G_CORE[career_name][node].get("weight", 3.0)
+            G_CORE[career_name][node]["weight"] = current_weight + 0.5
+            
+            print(f"Graph Update: Strengthened edge between {career_name} and {node}.")
+        
 # --- RECOMMENDATION MODEL 1: GRAPH ---
 
 def recommend_graph_model(user_name: str, user_skills_str: str, user_interests_str: str, top_k=5):
@@ -157,16 +201,12 @@ def recommend_kmeans_model(user_data, top_k=5):
     user_text = combine_user_input_ml(user_data)
     user_vector = setup.tfidf.transform([user_text])
 
-    # Predict cluster for user
     user_cluster = setup.kmeans.predict(user_vector)[0]
 
-    # Get careers from the same cluster
     cluster_careers = setup.careers_df[setup.careers_df['cluster'] == user_cluster].copy()
 
-    # Calculate similarity within the cluster
     cluster_indices = cluster_careers.index.tolist()
     
-    # Check if the cluster_indices array is empty
     if not cluster_indices:
         return []
 
@@ -174,7 +214,6 @@ def recommend_kmeans_model(user_data, top_k=5):
 
     similarities = cosine_similarity(user_vector, cluster_tfidf)[0]
 
-    # Get top K indices within the cluster
     top_local_indices = similarities.argsort()[-top_k:][::-1]
     top_global_indices = [cluster_indices[i] for i in top_local_indices]
 

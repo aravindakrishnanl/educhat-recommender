@@ -12,7 +12,8 @@ class User(Base):
     hashed_password = Column(String)
     created_at = Column(DateTime, default=func.now())
     
-    workspaces = relationship("Workspace", back_populates="owner")
+    workspaces = relationship("Workspace", back_populates="owner", cascade="all, delete-orphan")
+    feedback = relationship("Feedback", back_populates="user", cascade="all, delete-orphan")
 
 class Workspace(Base):
     __tablename__ = "workspaces"
@@ -20,8 +21,7 @@ class Workspace(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     
-    # NEW FIELDS
-    model_type = Column(String(10), nullable=False) # Stores 'GRAPH', 'KMEANS', or 'SVD'
+    model_type = Column(String(10), nullable=False) 
     projects_completed = Column(Text, nullable=True)
     certifications_completed = Column(Text, nullable=True)
     
@@ -33,3 +33,21 @@ class Workspace(Base):
     created_at = Column(DateTime, default=func.now())
 
     owner = relationship("User", back_populates="workspaces")
+    # NEW: Link to Feedback items for this workspace
+    feedback_items = relationship("Feedback", back_populates="workspace", cascade="all, delete-orphan")
+
+class Feedback(Base):
+    __tablename__ = "feedback"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    # FIX: Added ON DELETE CASCADE to the Foreign Key constraint
+    workspace_id = Column(Integer, ForeignKey("workspaces.id", ondelete="CASCADE"), nullable=False)
+    
+    career_name = Column(String, nullable=False)
+    rating = Column(Integer, nullable=False)
+    
+    created_at = Column(DateTime, default=func.now())
+    
+    user = relationship("User", back_populates="feedback")
+    workspace = relationship("Workspace", back_populates="feedback_items")

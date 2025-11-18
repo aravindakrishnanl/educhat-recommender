@@ -16,9 +16,7 @@ class User(UserBase):
     class Config:
         from_attributes = True
 
-# --- WORKSPACE SCHEMAS ---
-
-# Base schema for Graph Model (fewer inputs)
+# --- WORKSPACE SCHEMAS (Input) ---
 class WorkspaceBaseGraph(BaseModel):
     model_type: Literal["GRAPH"]
     name: str
@@ -26,19 +24,18 @@ class WorkspaceBaseGraph(BaseModel):
     skills: str 
     interests: str
 
-# Base schema for K-Means/SVD Models (more inputs)
 class WorkspaceBaseML(BaseModel):
     model_type: Literal["KMEANS", "SVD"]
     name: str
     branch: str 
     skills: str 
     interests: str
-    projects_completed: str
-    certifications_completed: str
+    projects_completed: Optional[str]
+    certifications_completed: Optional[str]
 
-# Union of all possible input schemas for the POST route
 WorkspaceCreate = Union[WorkspaceBaseGraph, WorkspaceBaseML]
 
+# --- WORKSPACE SCHEMAS (Output) ---
 class RecommendationResult(BaseModel):
     career_name: str
     score: float
@@ -49,12 +46,11 @@ class RecommendationResult(BaseModel):
 class Workspace(BaseModel):
     id: int
     user_id: int
-    model_type: str # Store selected model type
+    model_type: str
     name: str
     branch: str
     skills: str
     interests: str
-    # Projects/certs are optional in the database and output
     projects_completed: Optional[str] = None
     certifications_completed: Optional[str] = None
     recommendations: List[RecommendationResult] | None = None
@@ -63,3 +59,9 @@ class Workspace(BaseModel):
     class Config:
         from_attributes = True
         arbitrary_types_allowed = True
+
+# --- NEW FEEDBACK SCHEMA ---
+class FeedbackCreate(BaseModel):
+    workspace_id: int
+    career_name: str
+    rating: Literal[0, 1]
