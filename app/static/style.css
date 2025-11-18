@@ -15,12 +15,46 @@ body {
     color: var(--dark-text);
 }
 
-/* --- HERO & AUTH STYLES --- */
+/* --- Base Form & Input Styles --- */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
+
+input[type="text"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--primary-purple);
+}
+
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #4A148C; /* Darker purple */
+}
+
+/* --- HERO & AUTH STYLES --- */
 
 .hero-section {
     min-height: 80vh;
@@ -50,32 +84,8 @@ body {
     padding-bottom: 10px;
 }
 
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
+/* --- DASHBOARD LAYOUT & CARDS --- */
 
-.btn-primary {
-    background-color: var(--primary-purple);
-    color: var(--white);
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #4A148C; /* Darker purple */
-}
-
-/* --- DASHBOARD STYLES --- */
 .dashboard-header {
     display: flex;
     justify-content: space-between;
@@ -111,6 +121,7 @@ input[type="text"], input[type="password"] {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* New Workspace Button */
 .btn-new-workspace {
     background-color: var(--accent-purple);
     color: var(--white);
@@ -126,7 +137,65 @@ input[type="text"], input[type="password"] {
     background-color: #C51162; 
 }
 
-/* --- NEW DELETE BUTTON STYLES --- */
+/* --- MODAL STYLES --- */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe; 
+    margin: 5% auto; 
+    padding: 30px; 
+    border: 1px solid #888; 
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 10px;
+    border-top: 5px solid var(--primary-purple);
+}
+.close { 
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+}
+.close:hover, .close:focus { 
+    color: #000; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+/* Recommendation Output */
+.recommendation-list { 
+    margin-top: 20px; 
+}
+.rec-item { 
+    padding: 15px; 
+    border-bottom: 1px solid var(--light-purple); 
+}
+.rec-item h4 { 
+    color: var(--primary-purple); 
+    margin-top: 0; 
+}
+.rec-item p { 
+    font-size: 0.9em; 
+    color: var(--light-text); 
+}
+
+/* --- DELETE BUTTON STYLES --- */
+.workspace-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px;
+}
 
 .btn-delete {
     background-color: #B71C1C; /* Red color for Delete */
@@ -136,19 +205,11 @@ input[type="text"], input[type="password"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    margin-left: 15px; /* Spacing from the Workspace title */
+    margin-left: 15px;
     transition: background-color 0.3s;
-    flex-shrink: 0; /* Prevents the button from shrinking on small screens */
+    flex-shrink: 0; /* Prevents button from being squashed */
 }
 
 .btn-delete:hover {
-    background-color: #880E4F; /* Darker red on hover */
-}
-
-/* Ensure the button aligns nicely with the H3 title */
-.workspace-header {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    margin-bottom: 10px;
+    background-color: #880E4F; 
 }

@@ -12,7 +12,6 @@ class User(Base):
     hashed_password = Column(String)
     created_at = Column(DateTime, default=func.now())
     
-    # Using string reference "Workspace"
     workspaces = relationship("Workspace", back_populates="owner")
 
 class Workspace(Base):
@@ -20,6 +19,12 @@ class Workspace(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
+    
+    # NEW FIELDS
+    model_type = Column(String(10), nullable=False) # Stores 'GRAPH', 'KMEANS', or 'SVD'
+    projects_completed = Column(Text, nullable=True)
+    certifications_completed = Column(Text, nullable=True)
+    
     name = Column(String)
     branch = Column(String)
     skills = Column(Text)       
@@ -27,5 +32,4 @@ class Workspace(Base):
     recommendations = Column(JSON, nullable=True) 
     created_at = Column(DateTime, default=func.now())
 
-    # Using string reference "User"
     owner = relationship("User", back_populates="workspaces")

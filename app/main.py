@@ -4,26 +4,29 @@ from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from passlib.context import CryptContext
-from typing import Annotated
+from typing import Annotated, List
 from pathlib import Path
 import os
-from typing import List
 
 # CORE PACKAGE IMPORTS
 from .database import engine, Base, get_db
-from . import models, recommender_core 
+# Import recommender_setup before recommender_core to ensure ML models are initialized
+from . import models, recommender_setup 
+from . import recommender_core # Contains the recommendation functions
 
-# Import specific schema classes explicitly (to break circular imports)
+# Import specific schema classes explicitly
 from .schemas import (
     User as UserSchema, 
     UserCreate, 
     Workspace, 
-    WorkspaceCreate
+    WorkspaceCreate,
+    WorkspaceBaseGraph,
+    WorkspaceBaseML
 )
 
 # --- INITIAL SETUP ---
 app = FastAPI(title="Career Recommender API")
-# FIX: Using sha256_crypt for stable hashing across environments
+# Using sha256_crypt for stable hashing
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto") 
 db_dependency = Annotated[Session, Depends(get_db)]
 
@@ -82,20 +85,49 @@ def create_workspace(user_id: int, workspace: WorkspaceCreate, db: db_dependency
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
-    # 1. Run the recommendation logic
-    recommendations_list = recommender_core.generate_recommendations(
-        user_name=user.username,
-        user_skills_str=workspace.skills,
-        user_interests_str=workspace.interests
-    )
+    model_type = workspace.model_type
+    recommendations_list = []
+
+    # Prepare data based on the chosen model schema
+    user_skills_str = workspace.skills
+    user_interests_str = workspace.interests
+    
+    # Base data dictionary for ML models (SVD/KMEANS)
+    ml_data = {
+        'branch': workspace.branch,
+        'skills': [s.strip() for s in user_skills_str.split(',') if s.strip()], # ML functions expect a list
+        'interests': user_interests_str,
+        'projects_completed': getattr(workspace, 'projects_completed', ""),
+        'certifications_completed': getattr(workspace, 'certifications_completed', "")
+    }
+
+    # 1. Run the recommendation logic based on model type
+    if model_type == "GRAPH":
+        recommendations_list = recommender_core.recommend_graph_model(
+            user_name=user.username,
+            user_skills_str=user_skills_str,
+            user_interests_str=user_interests_str
+        )
+    elif model_type == "SVD":
+        recommendations_list = recommender_core.recommend_svd_model(ml_data)
+    elif model_type == "KMEANS":
+        recommendations_list = recommender_core.recommend_kmeans_model(ml_data)
+    else:
+        # Should be caught by Literal type hints in schemas, but safe to include
+        raise HTTPException(status_code=400, detail="Invalid model type selected.")
+
 
     # 2. Store the workspace data and results
     db_workspace = models.Workspace(
         user_id=user_id,
+        model_type=model_type,
         name=workspace.name,
         branch=workspace.branch,
-        skills=workspace.skills,
-        interests=workspace.interests,
+        skills=user_skills_str,
+        interests=user_interests_str,
+        # Safely assign optional fields; they will be None if not provided by the schema/form
+        projects_completed=getattr(workspace, 'projects_completed', None), 
+        certifications_completed=getattr(workspace, 'certifications_completed', None),
         recommendations=recommendations_list 
     )
 
@@ -110,10 +142,8 @@ def get_workspaces(user_id: int, db: db_dependency):
     workspaces = db.query(models.Workspace).filter(models.Workspace.user_id == user_id).all()
     return [Workspace.from_orm(ws) for ws in workspaces]
 
-# NEW FEATURE: Delete Workspace
 @app.delete("/user/{user_id}/workspace/{workspace_id}")
 def delete_workspace(user_id: int, workspace_id: int, db: db_dependency):
-    # Find the workspace, ensuring it belongs to the authenticated user (user_id)
     workspace = db.query(models.Workspace).filter(
         models.Workspace.id == workspace_id,
         models.Workspace.user_id == user_id
@@ -122,7 +152,6 @@ def delete_workspace(user_id: int, workspace_id: int, db: db_dependency):
     if not workspace:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Workspace not found or unauthorized.")
     
-    # Delete the record
     db.delete(workspace)
     db.commit()
     

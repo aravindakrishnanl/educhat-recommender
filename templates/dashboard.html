@@ -6,11 +6,12 @@
     <title>User Dashboard</title>
     <link rel="stylesheet" href="/static/style.css">
     <style>
+        /* Re-including dashboard specific styles here for clarity */
         .modal {
             display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);
         }
         .modal-content {
-            background-color: #fefefe; margin: 10% auto; padding: 30px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 10px;
+            background-color: #fefefe; margin: 5% auto; padding: 30px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 10px;
             border-top: 5px solid var(--primary-purple);
         }
         .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
@@ -19,7 +20,6 @@
         .rec-item { padding: 15px; border-bottom: 1px solid var(--light-purple); }
         .rec-item h4 { color: var(--primary-purple); margin-top: 0; }
         .rec-item p { font-size: 0.9em; color: var(--light-text); }
-        /* NEW: Added flex for delete button alignment */
         .workspace-header {
             display: flex; 
             justify-content: space-between; 
@@ -45,17 +45,32 @@
             <span class="close">&times;</span>
             <h2>Create New Workspace</h2>
             <form id="workspace-form">
-                <label for="ws-name">Name</label>
-                <input type="text" id="ws-name" name="name" placeholder="e.g., AI/Data Science Path" required>
+                <label for="ws-model">Choose Recommendation Model:</label>
+                <select id="ws-model" name="model_type" required onchange="toggleMLFields()">
+                    <option value="GRAPH">Graph Model (Skills/Interests Match)</option>
+                    <option value="KMEANS">K-Means (Clustering)</option>
+                    <option value="SVD">SVD (Advanced Dimensionality Reduction)</option>
+                </select>
+                
+                <label for="ws-name">Name:</label>
+                <input type="text" id="ws-name" name="name" placeholder="e.g., AI Career Path" required>
 
-                <label for="ws-branch">Branch (Cse/Ece/etc)</label>
+                <label for="ws-branch">Branch (Cse/Ece/etc):</label>
                 <input type="text" id="ws-branch" name="branch" required>
 
-                <label for="ws-skills">Skills (Comma Separated)</label>
+                <label for="ws-skills">Skills (Comma Separated):</label>
                 <input type="text" id="ws-skills" name="skills" placeholder="Python, SQL, Cloud Computing" required>
 
-                <label for="ws-interests">Interests (Comma Separated)</label>
-                <input type="text" id="ws-interests" name="interests" placeholder="Robotics, Finance, Gaming" required>
+                <label for="ws-interests">Interests (Comma Separated):</label>
+                <input type="text" id="ws-interests" name="interests" placeholder="AI, Finance, Robotics" required>
+
+                <div id="ml-fields" style="display: none;">
+                    <label for="ws-projects">Projects Completed (Comma Separated):</label>
+                    <input type="text" id="ws-projects" name="projects_completed" placeholder="ML project, Web app" >
+
+                    <label for="ws-certs">Certifications Completed (Comma Separated):</label>
+                    <input type="text" id="ws-certs" name="certifications_completed" placeholder="Coursera ML, Azure cert" >
+                </div>
 
                 <button type="submit" class="btn-primary">Generate Recommendations</button>
             </form>
@@ -77,6 +92,20 @@
 
         document.getElementById('welcome-message').textContent = `Welcome, ${username}!`;
 
+        // --- UI Dynamic Logic ---
+
+        function toggleMLFields() {
+            const model = document.getElementById('ws-model').value;
+            const mlFields = document.getElementById('ml-fields');
+            const isML = (model === 'KMEANS' || model === 'SVD');
+            
+            mlFields.style.display = isML ? 'block' : 'none';
+            
+            // Make fields required/optional based on model choice
+            document.getElementById('ws-projects').required = isML;
+            document.getElementById('ws-certs').required = isML;
+        }
+
         // --- Core Functions ---
 
         function logout() {
@@ -89,9 +118,11 @@
             
             let html = '<div class="recommendation-list">';
             recs.forEach((rec, index) => {
+                // Use score for display, noting that it means different things per model (weight sum vs. similarity)
+                const scoreLabel = rec.score > 1.0 ? 'Score' : 'Similarity';
                 html += `
                     <div class="rec-item">
-                        <h4>${index + 1}. ${rec.career_name} (Score: ${rec.score})</h4>
+                        <h4>${index + 1}. ${rec.career_name} (${scoreLabel}: ${rec.score.toFixed(4)})</h4>
                         <p><strong>Top Skills:</strong> ${rec.required_skills.join(', ')}</p>
                         <p><strong>Top Courses:</strong> ${rec.recommended_courses.join(', ')}</p>
                         <p><strong>Roadmap:</strong> ${rec.roadmap}</p>
@@ -108,15 +139,24 @@
             card.setAttribute('data-id', workspace.id); 
 
             const recsHtml = renderRecommendations(workspace.recommendations);
+            
+            // Display optional ML inputs only if they were saved
+            const mlDetails = (workspace.projects_completed || workspace.certifications_completed) ? 
+                `<div>
+                    <p><strong>Projects:</strong> ${workspace.projects_completed || 'N/A'}</p>
+                    <p><strong>Certifications:</strong> ${workspace.certifications_completed || 'N/A'}</p>
+                </div>` : '';
 
             card.innerHTML = `
                 <div class="workspace-header">
-                    <h3>${workspace.name} (${workspace.branch})</h3>
+                    <h3>${workspace.name} (${workspace.model_type})</h3>
                     <button class="btn-delete" onclick="handleDelete(${workspace.id})">Delete</button>
                 </div>
                 <p>Created: ${new Date(workspace.created_at).toLocaleDateString()}</p>
+                <p>Branch: ${workspace.branch}</p>
                 <p>Skills: ${workspace.skills}</p>
                 <p>Interests: ${workspace.interests}</p>
+                ${mlDetails}
                 <hr style="border-top: 1px dashed var(--light-purple);">
                 <h4>Career Recommendations:</h4>
                 ${recsHtml}
@@ -130,13 +170,14 @@
             const workspaces = await response.json();
             
             if (response.ok && workspaces.length > 0) {
-                workspaces.forEach(renderWorkspace);
+                // Render newest first (prepend)
+                workspaces.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).forEach(renderWorkspace);
             } else if (response.ok) {
                 workspaceContainer.innerHTML = '<p style="text-align: center; padding: 50px; color: var(--light-text);">No workspaces yet. Click "New Workspace" to start your career path!</p>';
             }
         }
         
-        // --- NEW DELETE LOGIC ---
+        // --- DELETE LOGIC ---
 
         async function handleDelete(workspaceId) {
             const confirmDelete = confirm("Are you sure you want to delete this workspace? This action cannot be undone.");
@@ -150,13 +191,11 @@
                 });
 
                 if (response.ok) {
-                    // Remove the card from the DOM
                     const cardToRemove = document.querySelector(`.workspace-card[data-id="${workspaceId}"]`);
                     if (cardToRemove) {
                         cardToRemove.remove();
                     }
                     alert(`Workspace ${workspaceId} deleted successfully.`);
-                    // If no cards are left, show the placeholder message
                     if (workspaceContainer.childElementCount === 0) {
                         loadWorkspaces(); 
                     }
@@ -182,6 +221,12 @@
             e.preventDefault();
             const formData = new FormData(workspaceForm);
             const data = Object.fromEntries(formData.entries());
+            
+            // Clean up data for GraphQL model if not needed (ensures backend receives clean object)
+            if (data.model_type === 'GRAPH') {
+                delete data.projects_completed;
+                delete data.certifications_completed;
+            }
 
             const response = await fetch(`/user/${userId}/workspace`, {
                 method: 'POST',
@@ -194,11 +239,15 @@
                 renderWorkspace(newWorkspace);
                 modal.style.display = "none";
                 workspaceForm.reset();
+                toggleMLFields(); 
             } else {
-                alert('Failed to create workspace.');
+                const errorData = await response.json();
+                alert(`Failed to create workspace: ${errorData.detail}`);
             }
         });
 
+        // Initial setup
+        toggleMLFields();
         loadWorkspaces();
     </script>
 </body>
