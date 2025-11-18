@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edurec - Job Recommendations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#212529] dark:text-white">
+<div class="flex h-screen flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 dark:border-white/10 bg-background-light dark:bg-background-dark px-6 py-3 sticky top-0 z-20">
+<div class="flex items-center gap-4 text-slate-800 dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<h2 class="text-slate-800 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Edurec</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-md w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 dark:text-slate-400 flex border-none bg-white dark:bg-slate-800/50 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-800 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-slate-800/50 focus:border-none h-full placeholder:text-slate-400 dark:placeholder:text-slate-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search by job title, company, or keyword..." value=""/>
+</div>
+</label>
+<div class="flex items-center gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-transparent hover:bg-slate-200 dark:hover:bg-slate-800/60 text-slate-600 dark:text-slate-300 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOEb8bQoShjdJXRfJYCW01AxjY3OCtGSZ-0mXwFSw06FaQnkoDGFhMH2jhqF5iMDFaVv1XEJOxym6fSiX2H1tRo__ZTlzDPkM0_BhG0qZIz4_IucByvaDA3FZBPag9zMvCjVVfCWM-sXTJFhn4roQ9v78WZ1nK9mn1kE_gfVi8EO1nfPQzZ19bvYyJR1on7xJVvIMvqc-YYgirnQkbinhDsDqENg2HaxmnykbIkPxBLIXbekuQPuUMCsNrjEWotEiaLYN41py27to");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Filter Sidebar -->
+<aside class="w-72 flex-shrink-0 border-r border-white/10 dark:border-white/10 p-6 overflow-y-auto">
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-semibold text-slate-800 dark:text-white">Filters</h3>
+<div class="flex flex-col">
+<details class="flex flex-col border-t border-slate-200 dark:border-slate-800 py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-slate-800 dark:text-white text-sm font-medium leading-normal">Job Role</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 text-sm text-slate-600 dark:text-slate-300">
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Software Engineer</label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Mechanical Engineer</label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Data Analyst</label>
+</div>
+</details>
+<details class="flex flex-col border-t border-slate-200 dark:border-slate-800 py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-slate-800 dark:text-white text-sm font-medium leading-normal">Industry</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 text-sm text-slate-600 dark:text-slate-300">
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Aerospace</label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> FinTech</label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Consumer Electronics</label>
+</div>
+</details>
+<details class="flex flex-col border-t border-slate-200 dark:border-slate-800 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-slate-800 dark:text-white text-sm font-medium leading-normal">Location</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 text-sm text-slate-600 dark:text-slate-300">
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Remote</label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> New York, NY</label>
+</div>
+</details>
+<details class="flex flex-col border-t border-b border-slate-200 dark:border-slate-800 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-slate-800 dark:text-white text-sm font-medium leading-normal">Job Type</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 text-sm text-slate-600 dark:text-slate-300">
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Full-time</label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded bg-slate-200 dark:bg-slate-700 border-none text-primary focus:ring-primary/50" type="checkbox"/> Internship</label>
+</div>
+</details>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">Apply Filters</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 gap-2 text-sm font-medium leading-normal min-w-0 px-4">Clear All</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-8">
+<div class="max-w-full mx-auto">
+<h1 class="text-slate-800 dark:text-white tracking-light text-[32px] font-bold leading-tight text-left">Job Recommendations</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Recommended for you based on your profile</p>
+<div class="flex items-center justify-between mt-6 mb-4">
+<p class="text-sm text-slate-600 dark:text-slate-400">Showing 75 recommended jobs</p>
+<div class="flex items-center gap-2">
+<label class="text-sm text-slate-600 dark:text-slate-400" for="sort">Sort by:</label>
+<select class="form-select rounded-lg border-none bg-white dark:bg-slate-800/50 text-slate-800 dark:text-white text-sm focus:ring-2 focus:ring-primary/50" id="sort">
+<option>Relevance</option>
+<option>Date Posted</option>
+<option>Company</option>
+</select>
+</div>
+</div>
+<!-- Job Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Job Card 1 -->
+<div class="flex flex-col justify-between rounded-xl bg-white dark:bg-slate-900/70 p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-3xl text-slate-500">factory</span></div>
+<div>
+<h3 class="text-lg font-semibold text-slate-800 dark:text-white">Software Engineer</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Innovate Inc.</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">bookmark_border</span></button>
+</div>
+<div class="flex items-center gap-2 mt-4 text-xs">
+<span class="bg-primary/20 text-primary font-medium px-2 py-1 rounded-full">Full-time</span>
+<span class="bg-teal-400/20 text-teal-400 font-medium px-2 py-1 rounded-full">On-site</span>
+<span class="bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium px-2 py-1 rounded-full">Entry-level</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mt-4 line-clamp-2">Develop and maintain web applications using modern technologies like React and Node.js. Collaborate with a team of talented engineers...</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1.5"><span class="material-symbols-outlined text-base">location_on</span>San Francisco, CA</p>
+<button class="text-sm font-semibold text-primary hover:underline">View Details</button>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="flex flex-col justify-between rounded-xl bg-white dark:bg-slate-900/70 p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-3xl text-slate-500">precision_manufacturing</span></div>
+<div>
+<h3 class="text-lg font-semibold text-slate-800 dark:text-white">Mechanical Engineer</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Tech Solutions</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">bookmark</span></button>
+</div>
+<div class="flex items-center gap-2 mt-4 text-xs">
+<span class="bg-primary/20 text-primary font-medium px-2 py-1 rounded-full">Internship</span>
+<span class="bg-teal-400/20 text-teal-400 font-medium px-2 py-1 rounded-full">Hybrid</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mt-4 line-clamp-2">Assist in the design and testing of new mechanical components for our flagship product line. Work with CAD software...</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1.5"><span class="material-symbols-outlined text-base">location_on</span>Austin, TX</p>
+<button class="text-sm font-semibold text-primary hover:underline">View Details</button>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="flex flex-col justify-between rounded-xl bg-white dark:bg-slate-900/70 p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-shadow">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-3xl text-slate-500">query_stats</span></div>
+<div>
+<h3 class="text-lg font-semibold text-slate-800 dark:text-white">Data Analyst</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">QuantumLeap</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">bookmark_border</span></button>
+</div>
+<div class="flex items-center gap-2 mt-4 text-xs">
+<span class="bg-primary/20 text-primary font-medium px-2 py-1 rounded-full">Full-time</span>
+<span class="bg-teal-400/20 text-teal-400 font-medium px-2 py-1 rounded-full">Remote</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mt-4 line-clamp-2">Analyze large datasets to extract meaningful insights and support business decisions. Proficiency in SQL and Python required.</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1.5"><span class="material-symbols-outlined text-base">location_on</span>Remote</p>
+<button class="text-sm font-semibold text-primary hover:underline">View Details</button>
+</div>
+</div>
+<!-- Job Card 4 (Empty State Example) -->
+<div class="col-span-1 lg:col-span-2 xl:col-span-3 flex flex-col items-center justify-center text-center p-12 rounded-xl bg-white dark:bg-slate-900/70 border-2 border-dashed border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-6xl text-slate-400 dark:text-slate-600">search_off</span>
+<h4 class="text-xl font-semibold mt-4 text-slate-800 dark:text-white">No Jobs Found</h4>
+<p class="text-slate-500 dark:text-slate-400 mt-2 max-w-sm">We couldn't find any jobs that match your current filters. Try broadening your search criteria.</p>
+<button class="mt-6 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary/10 dark:bg-primary/20 text-primary gap-2 text-sm font-bold leading-normal min-w-0 px-4">Clear All Filters</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

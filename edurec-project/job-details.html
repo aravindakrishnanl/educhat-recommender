@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Details - Edurec</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Lexend"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-10 border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold">Edurec</h2>
+</div>
+<div class="hidden md:flex flex-1 items-center justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium" href="#">Dashboard</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium" href="#">My Profile</a>
+<a class="text-primary dark:text-primary text-sm font-bold" href="#">Search Jobs</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium" href="#">Saved Jobs</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+<span class="truncate">Post a Job</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKykGHFe9oAUcY0_m1BPFGLSjEMOs39zojLYFGPA1V4Dbzv1wBrpz3CazO52ezxjwPykMpBBqAj2R0dNDvyfkzYUrOW3Mx12VMotTKN1hGkWTqSO4v_IcVj7qGkxQEuTSV2Lyp3ESovuPuu8F_G2IkzI6Q8_zNWSZqH9C_YBKOU9I9SnwATrauJAobI6QoGBs4Tk4L4fzVNZHPiV2Z9KyYxVrnAVe4kuUwYXe9qjAKB7YcIhYcrr8VpNuuHKAGXifhHtf85aLLujA");'></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-6">
+<a class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+                    Back to Search Results
+                </a>
+</div>
+<div class="flex flex-wrap items-center gap-2 mb-8">
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Home</a>
+<span class="text-sm text-gray-400 dark:text-gray-500">/</span>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Search Results</a>
+<span class="text-sm text-gray-400 dark:text-gray-500">/</span>
+<span class="text-sm font-medium text-gray-800 dark:text-white">Software Engineer at TechCorp</span>
+</div>
+<!-- Page Header -->
+<div class="flex flex-wrap justify-between gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl lg:text-4xl font-black tracking-tighter text-gray-900 dark:text-white">Software Engineer</h1>
+<p class="text-base text-gray-500 dark:text-gray-400">TechCorp • San Francisco, CA • Full-time • Posted 2 days ago</p>
+</div>
+<div class="flex gap-3 items-start">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold tracking-wide hover:bg-primary/90 transition-colors">
+<span>Apply Now</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-200 text-base font-bold tracking-wide hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span>Save Job</span>
+</button>
+</div>
+</div>
+<!-- Two-column layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+<!-- Left Column: Job Details -->
+<div class="lg:col-span-2 space-y-10">
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Job Description</h2>
+<div class="prose prose-base text-gray-600 dark:text-gray-300 max-w-none space-y-4">
+<p>We are seeking a talented and motivated Software Engineer to join our dynamic team at TechCorp. In this role, you will be responsible for designing, developing, and maintaining high-quality software solutions that power our innovative products. You will collaborate with cross-functional teams to define, design, and ship new features, ensuring the best possible performance, quality, and responsiveness of our applications.</p>
+<p>This is an exciting opportunity for an engineer who is passionate about building scalable and robust systems, enjoys solving complex problems, and is eager to contribute to a fast-paced, growing company.</p>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Key Responsibilities</h2>
+<ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+<li>Design and build advanced applications for our platform.</li>
+<li>Collaborate with product managers and designers to create a seamless user experience.</li>
+<li>Write clean, maintainable, and efficient code.</li>
+<li>Troubleshoot, debug, and upgrade existing software.</li>
+<li>Participate in code reviews to maintain high-quality code standards.</li>
+<li>Work with CI/CD pipelines for automated testing and deployment.</li>
+</ul>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Required Qualifications</h2>
+<ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+<li>Bachelor's degree in Computer Science, Engineering, or a related field.</li>
+<li>2+ years of professional software development experience.</li>
+<li>Proficiency in at least one modern programming language such as Python, Java, or C++.</li>
+<li>Strong understanding of data structures, algorithms, and software design principles.</li>
+<li>Experience with relational databases and SQL.</li>
+</ul>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Preferred Qualifications</h2>
+<ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+<li>Experience with cloud platforms like AWS, Azure, or Google Cloud.</li>
+<li>Familiarity with containerization technologies such as Docker and Kubernetes.</li>
+<li>Knowledge of front-end frameworks like React or Vue.js.</li>
+<li>Experience in an Agile/Scrum development environment.</li>
+</ul>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Required Skills</h2>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block rounded-md bg-primary/20 px-3 py-1 text-sm font-medium text-primary dark:text-primary">Python</span>
+<span class="inline-block rounded-md bg-primary/20 px-3 py-1 text-sm font-medium text-primary dark:text-primary">SQL</span>
+<span class="inline-block rounded-md bg-primary/20 px-3 py-1 text-sm font-medium text-primary dark:text-primary">Data Structures</span>
+<span class="inline-block rounded-md bg-primary/20 px-3 py-1 text-sm font-medium text-primary dark:text-primary">Algorithms</span>
+<span class="inline-block rounded-md bg-primary/20 px-3 py-1 text-sm font-medium text-primary dark:text-primary">Software Design</span>
+<span class="inline-block rounded-md bg-primary/20 px-3 py-1 text-sm font-medium text-primary dark:text-primary">Git</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary & Company Info -->
+<aside class="space-y-8 lg:sticky lg:top-24 h-fit">
+<!-- Job Summary Card -->
+<div class="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900/50">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Job Summary</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 mt-0.5 mr-3">payments</span>
+<div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Salary</p>
+<p class="font-semibold text-gray-800 dark:text-gray-100">$120,000 - $160,000 USD</p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 mt-0.5 mr-3">business_center</span>
+<div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Job Type</p>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Full-time</p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 mt-0.5 mr-3">bar_chart</span>
+<div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Experience Level</p>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Mid-Senior level</p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 mt-0.5 mr-3">laptop_chromebook</span>
+<div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Work Model</p>
+<p class="font-semibold text-gray-800 dark:text-gray-100">Hybrid</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Company Info Card -->
+<div class="border border-gray-200 dark:border-gray-800 rounded-xl p-6 bg-white dark:bg-gray-900/50">
+<div class="flex items-center gap-4 mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14" data-alt="TechCorp company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA99u9bMffkzO-nuWPBr_BfgrjEN4v5fsG0Fs3DiLutXMsXYyEzyqjmM7h2pHzLhsPK8_Dmwmr5Bs4TYnT3kmmhfYmpPAiHuvDQ3j2YH3HSWl7LsHj0h85Mlow9c2ywcbfhhUN3rdrkY4w_MLAxshaimvZL3oLlylt2CHuG2lxm8nIS8VyERm-8T6BZpAAqN-GWftLiSYf8OMsaqrqiPaOHzr3fBgCl5J99_CNwBhqSv9L5IRvLrxJV9wRleq5WMMoJrf3h__AM7M0");'></div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">About TechCorp</h3>
+<a class="text-sm text-primary hover:underline" href="#">View company profile</a>
+</div>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300">TechCorp is a leading innovator in the technology industry, dedicated to creating solutions that shape the future. Our mission is to empower businesses and individuals through cutting-edge software and hardware products.</p>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

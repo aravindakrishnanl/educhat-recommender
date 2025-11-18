@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .modal {
+            display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe; margin: 10% auto; padding: 30px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 10px;
+            border-top: 5px solid var(--primary-purple);
+        }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+        .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
+        .recommendation-list { margin-top: 20px; }
+        .rec-item { padding: 15px; border-bottom: 1px solid var(--light-purple); }
+        .rec-item h4 { color: var(--primary-purple); margin-top: 0; }
+        .rec-item p { font-size: 0.9em; color: var(--light-text); }
+        /* NEW: Added flex for delete button alignment */
+        .workspace-header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1 id="welcome-message">Dashboard</h1>
+        <div>
+            <button class="btn-new-workspace" id="new-workspace-btn">✨ New Workspace</button>
+            <button class="btn-primary" onclick="logout()" style="width: auto; background-color: #B71C1C;">Logout</button>
+        </div>
+    </header>
+
+    <div class="workspace-list" id="workspace-container">
+        </div>
+
+    <div id="new-workspace-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Workspace</h2>
+            <form id="workspace-form">
+                <label for="ws-name">Name</label>
+                <input type="text" id="ws-name" name="name" placeholder="e.g., AI/Data Science Path" required>
+
+                <label for="ws-branch">Branch (Cse/Ece/etc)</label>
+                <input type="text" id="ws-branch" name="branch" required>
+
+                <label for="ws-skills">Skills (Comma Separated)</label>
+                <input type="text" id="ws-skills" name="skills" placeholder="Python, SQL, Cloud Computing" required>
+
+                <label for="ws-interests">Interests (Comma Separated)</label>
+                <input type="text" id="ws-interests" name="interests" placeholder="Robotics, Finance, Gaming" required>
+
+                <button type="submit" class="btn-primary">Generate Recommendations</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const userId = localStorage.getItem('user_id');
+        const username = localStorage.getItem('username');
+        const workspaceContainer = document.getElementById('workspace-container');
+        const modal = document.getElementById('new-workspace-modal');
+        const newWorkspaceBtn = document.getElementById('new-workspace-btn');
+        const closeSpan = document.getElementsByClassName("close")[0];
+        const workspaceForm = document.getElementById('workspace-form');
+
+        if (!userId) {
+            window.location.href = '/auth'; 
+        }
+
+        document.getElementById('welcome-message').textContent = `Welcome, ${username}!`;
+
+        // --- Core Functions ---
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = '/auth';
+        }
+
+        function renderRecommendations(recs) {
+            if (!recs || recs.length === 0 || recs[0].score === 0) return '<p style="color: var(--light-text);">No strong recommendations found. Try different inputs.</p>';
+            
+            let html = '<div class="recommendation-list">';
+            recs.forEach((rec, index) => {
+                html += `
+                    <div class="rec-item">
+                        <h4>${index + 1}. ${rec.career_name} (Score: ${rec.score})</h4>
+                        <p><strong>Top Skills:</strong> ${rec.required_skills.join(', ')}</p>
+                        <p><strong>Top Courses:</strong> ${rec.recommended_courses.join(', ')}</p>
+                        <p><strong>Roadmap:</strong> ${rec.roadmap}</p>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            return html;
+        }
+
+        function renderWorkspace(workspace) {
+            const card = document.createElement('div');
+            card.className = 'workspace-card';
+            card.setAttribute('data-id', workspace.id); 
+
+            const recsHtml = renderRecommendations(workspace.recommendations);
+
+            card.innerHTML = `
+                <div class="workspace-header">
+                    <h3>${workspace.name} (${workspace.branch})</h3>
+                    <button class="btn-delete" onclick="handleDelete(${workspace.id})">Delete</button>
+                </div>
+                <p>Created: ${new Date(workspace.created_at).toLocaleDateString()}</p>
+                <p>Skills: ${workspace.skills}</p>
+                <p>Interests: ${workspace.interests}</p>
+                <hr style="border-top: 1px dashed var(--light-purple);">
+                <h4>Career Recommendations:</h4>
+                ${recsHtml}
+            `;
+            workspaceContainer.prepend(card); 
+        }
+
+        async function loadWorkspaces() {
+            workspaceContainer.innerHTML = '';
+            const response = await fetch(`/user/${userId}/workspaces`);
+            const workspaces = await response.json();
+            
+            if (response.ok && workspaces.length > 0) {
+                workspaces.forEach(renderWorkspace);
+            } else if (response.ok) {
+                workspaceContainer.innerHTML = '<p style="text-align: center; padding: 50px; color: var(--light-text);">No workspaces yet. Click "New Workspace" to start your career path!</p>';
+            }
+        }
+        
+        // --- NEW DELETE LOGIC ---
+
+        async function handleDelete(workspaceId) {
+            const confirmDelete = confirm("Are you sure you want to delete this workspace? This action cannot be undone.");
+            if (!confirmDelete) return;
+
+            const userId = localStorage.getItem('user_id');
+            
+            try {
+                const response = await fetch(`/user/${userId}/workspace/${workspaceId}`, {
+                    method: 'DELETE',
+                });
+
+                if (response.ok) {
+                    // Remove the card from the DOM
+                    const cardToRemove = document.querySelector(`.workspace-card[data-id="${workspaceId}"]`);
+                    if (cardToRemove) {
+                        cardToRemove.remove();
+                    }
+                    alert(`Workspace ${workspaceId} deleted successfully.`);
+                    // If no cards are left, show the placeholder message
+                    if (workspaceContainer.childElementCount === 0) {
+                        loadWorkspaces(); 
+                    }
+                } else {
+                    const errorData = await response.json();
+                    alert(`Deletion Failed: ${errorData.detail || 'Server error'}`);
+                }
+            } catch (error) {
+                console.error('Network or client error:', error);
+                alert('An error occurred during deletion.');
+            }
+        }
+        
+        // --- Event Listeners and Initial Load ---
+        
+        newWorkspaceBtn.onclick = function() { modal.style.display = "block"; }
+        closeSpan.onclick = function() { modal.style.display = "none"; }
+        window.onclick = function(event) {
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+
+        workspaceForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(workspaceForm);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch(`/user/${userId}/workspace`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                const newWorkspace = await response.json();
+                renderWorkspace(newWorkspace);
+                modal.style.display = "none";
+                workspaceForm.reset();
+            } else {
+                alert('Failed to create workspace.');
+            }
+        });
+
+        loadWorkspaces();
+    </script>
+</body>
+</html>
